@@ -1,0 +1,1 @@
+start ../Build/Windows/Output.exe

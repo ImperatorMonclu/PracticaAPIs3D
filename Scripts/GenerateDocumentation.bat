@@ -1,0 +1,2 @@
+cd ..
+(type "Documentation\Doxyfile" & echo PROJECT_NAME = "Práctica: Utilización de APIs Tridimensionales" & echo PROJECT_NUMBER = "0.1.0" & echo PROJECT_BRIEF = "Práctica en OpenGL para la asignatura Utilización de APIs Tridimensionales del Máster Universitario en Computación Gráfica, Realidad Virtual y Simulación de U-tad") | doxygen -

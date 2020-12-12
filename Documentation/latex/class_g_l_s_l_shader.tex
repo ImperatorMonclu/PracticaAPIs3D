@@ -1,0 +1,143 @@
+\hypertarget{class_g_l_s_l_shader}{}\doxysection{G\+L\+S\+L\+Shader Class Reference}
+\label{class_g_l_s_l_shader}\index{GLSLShader@{GLSLShader}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_g_l_s_l_shader_ade6e805d01f4af5718387d12b4ddc23b}{G\+L\+S\+L\+Shader}} (std\+::string vertex\+Prg, std\+::string frag\+Prg)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} object. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the Id object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}\label{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}} 
+const char $\ast$ {\bfseries get\+Error} ()
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a9ac80ec08b736dc5dc89e68f31e9bd8d}\label{class_g_l_s_l_shader_a9ac80ec08b736dc5dc89e68f31e9bd8d}} 
+void {\bfseries use} ()
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_adc3bff405da837b64a8196e09c17058a}\label{class_g_l_s_l_shader_adc3bff405da837b64a8196e09c17058a}} 
+void {\bfseries setup\+Attribs} ()
+\item 
+glm\+::uint32 \mbox{\hyperlink{class_g_l_s_l_shader_aefe8b325deeb9b3560fa05ac9094dfa5}{get\+Location}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Obtiene la localización de una variable específica del shader por su nombre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_s_l_shader_a1e0b42282e9323371dd538a0a9cc63a6}{set\+Int}} (glm\+::uint32 loc, int val)
+\begin{DoxyCompactList}\small\item\em Modifica una variable del shader de tipo entero a partir de su localización. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}\label{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}} 
+void {\bfseries set\+Float} (glm\+::uint32 loc, float val)
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}\label{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}} 
+void {\bfseries set\+Vec3} (glm\+::uint32 loc, const glm\+::vec3 \&vec)
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}\label{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}} 
+void {\bfseries set\+Vec4} (glm\+::uint32 loc, const glm\+::vec4 \&vec)
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}\label{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}} 
+void {\bfseries set\+Matrix} (glm\+::uint32 loc, const glm\+::mat4 \&matrix)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a781b6ea65ad466dd86825a981f4b928d}\label{class_g_l_s_l_shader_a781b6ea65ad466dd86825a981f4b928d}} 
+glm\+::uint32 {\bfseries program\+ID}
+\item 
+\mbox{\Hypertarget{class_g_l_s_l_shader_a8aa75cc5ca1a1ccbdb74de86fa30fbb5}\label{class_g_l_s_l_shader_a8aa75cc5ca1a1ccbdb74de86fa30fbb5}} 
+std\+::map$<$ std\+::string, glm\+::uint32 $>$ {\bfseries v\+Shader\+Attribs}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6 of file G\+L\+S\+L\+Shader.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_l_s_l_shader_ade6e805d01f4af5718387d12b4ddc23b}\label{class_g_l_s_l_shader_ade6e805d01f4af5718387d12b4ddc23b}} 
+\index{GLSLShader@{GLSLShader}!GLSLShader@{GLSLShader}}
+\index{GLSLShader@{GLSLShader}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{GLSLShader()}{GLSLShader()}}
+{\footnotesize\ttfamily G\+L\+S\+L\+Shader\+::\+G\+L\+S\+L\+Shader (\begin{DoxyParamCaption}\item[{std\+::string}]{vertex\+Prg,  }\item[{std\+::string}]{frag\+Prg }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Prg} & \\
+\hline
+{\em frag\+Prg} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file G\+L\+S\+L\+Shader.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}\label{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}} 
+\index{GLSLShader@{GLSLShader}!getId@{getId}}
+\index{getId@{getId}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily uint32\+\_\+t G\+L\+S\+L\+Shader\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Id object. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file G\+L\+S\+L\+Shader.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_s_l_shader_aefe8b325deeb9b3560fa05ac9094dfa5}\label{class_g_l_s_l_shader_aefe8b325deeb9b3560fa05ac9094dfa5}} 
+\index{GLSLShader@{GLSLShader}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily glm\+::uint32 G\+L\+S\+L\+Shader\+::get\+Location (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Obtiene la localización de una variable específica del shader por su nombre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & nombre de la variable en el shader por una cadena de texto \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+glm\+::uint32 posición de la variable en el shader por un entero 
+\end{DoxyReturn}
+
+
+Definition at line 102 of file G\+L\+S\+L\+Shader.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_s_l_shader_a1e0b42282e9323371dd538a0a9cc63a6}\label{class_g_l_s_l_shader_a1e0b42282e9323371dd538a0a9cc63a6}} 
+\index{GLSLShader@{GLSLShader}!setInt@{setInt}}
+\index{setInt@{setInt}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{setInt()}{setInt()}}
+{\footnotesize\ttfamily void G\+L\+S\+L\+Shader\+::set\+Int (\begin{DoxyParamCaption}\item[{glm\+::uint32}]{loc,  }\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+Modifica una variable del shader de tipo entero a partir de su localización. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & \\
+\hline
+{\em val} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file G\+L\+S\+L\+Shader.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Source/G\+L\+S\+L\+Shader.\+h\item 
+Source/G\+L\+S\+L\+Shader.\+cpp\end{DoxyCompactItemize}
