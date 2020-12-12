@@ -1,0 +1,330 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Práctica Utilización de APIs Tridimensionales"
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.suggestSelection": "first",
+		"files.associations": {
+			"array": "cpp",
+			"atomic": "cpp",
+			"bit": "cpp",
+			"*.tcc": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"cstdarg": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cstring": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"deque": "cpp",
+			"map": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"exception": "cpp",
+			"algorithm": "cpp",
+			"functional": "cpp",
+			"iterator": "cpp",
+			"memory": "cpp",
+			"memory_resource": "cpp",
+			"numeric": "cpp",
+			"optional": "cpp",
+			"random": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"system_error": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp",
+			"initializer_list": "cpp",
+			"iosfwd": "cpp",
+			"iostream": "cpp",
+			"istream": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"ostream": "cpp",
+			"ranges": "cpp",
+			"stdexcept": "cpp",
+			"streambuf": "cpp",
+			"cinttypes": "cpp",
+			"typeinfo": "cpp",
+			"ctime": "cpp",
+			"fstream": "cpp",
+			"sstream": "cpp"
+		},
+		"cSpell.enableFiletypes": [
+			"arduino-output",
+			"aspnetcorerazor",
+			"azcli",
+			"bat",
+			"bibtex",
+			"bibtex-style",
+			"cg",
+			"clojure",
+			"cmake",
+			"cmake-cache",
+			"coffeescript",
+			"cpp_embedded_latex",
+			"csv",
+			"csv (caret)",
+			"csv (colon)",
+			"csv (dot)",
+			"csv (double quote)",
+			"csv (equals)",
+			"csv (hyphen)",
+			"csv (pipe)",
+			"csv (semicolon)",
+			"csv (tilde)",
+			"csv (whitespace)",
+			"diff",
+			"dockerfile",
+			"doctex",
+			"dotenv",
+			"fsharp",
+			"gdscript",
+			"git-rebase",
+			"glsl",
+			"groovy",
+			"hlsl",
+			"hosts",
+			"ignore",
+			"ini",
+			"jinja",
+			"jlweave",
+			"jsx-tags",
+			"julia",
+			"jupyter",
+			"jvmoptions",
+			"latex-expl3",
+			"log",
+			"Log",
+			"lua",
+			"makefile",
+			"objective-c",
+			"objective-cpp",
+			"pdf",
+			"perl",
+			"perl6",
+			"pip-requirements",
+			"powershell",
+			"properties",
+			"qsharp",
+			"r",
+			"rainbow hover markup",
+			"razor",
+			"rsweave",
+			"ruby",
+			"scminput",
+			"search-result",
+			"shaderlab",
+			"shellscript",
+			"sql",
+			"ssh_config",
+			"swift",
+			"systemverilog",
+			"tcl",
+			"tex",
+			"toml",
+			"tsv",
+			"vb",
+			"verilog",
+			"vhdl",
+			"xml",
+			"xsl"
+		],
+		"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+		"C_Cpp.default.includePath": [
+			"${workspaceFolder}/Include/*",
+			"${workspaceFolder}/Source/*"
+		],
+		"C_Cpp.default.compileCommands": "g++",
+		"C_Cpp.default.cppStandard": "gnu++20"
+		//"cmake.configureOnOpen": false,
+		/*"python.testing.unittestArgs": [
+			"-v",
+			"-s",
+			"./Test",
+			"-p",
+			"*test.py"
+		],
+		"python.testing.pytestEnabled": false,
+		"python.testing.nosetestsEnabled": false,
+		"python.testing.unittestEnabled": true,*/
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vsliveshare.vsliveshare",
+			//"twxs.cmake",
+			//"ms-azuretools.vscode-docker",
+			//"acherkashin.virtualbox-extension",
+			//"googlecloudtools.cloudcode",
+			//"adelphes.android-dev-ext",
+			//"aeschli.vscode-css-formatter",
+			"ajshort.include-autocomplete",
+			//"bat-snippets.bat-snippets",
+			"cschlosser.doxdocgen",
+			"docsmsft.docs-markdown",
+			"forevolve.git-extensions-for-vs-code",
+			//"foxundermoon.shell-format",
+			"funkyremi.vscode-google-translate",
+			//"geequlim.godot-tools",
+			//"lextudio.restructuredtext",
+			"mechatroner.rainbow-csv",
+			//"mitaki28.vscode-clang",
+			//"mpotthoff.vscode-android-webview-debug",
+			//"ms-python.python",
+			//"ms-toolsai.jupyter",
+			//"ms-vscode-remote.remote-containers",
+			//"ms-vscode-remote.remote-ssh",
+			//"ms-vscode-remote.remote-ssh-edit",
+			//"ms-vscode-remote.remote-wsl",
+			//"ms-vscode.cmake-tools",
+			"ms-vscode.cpptools",
+			"ms-vscode.mono-debug",
+			//"msjsdiag.debugger-for-chrome",
+			//"msjsdiag.debugger-for-edge",
+			"qinjia.view-in-browser",
+			//"quantum.quantum-devkit-vscode",
+			"ritwickdey.LiveServer",
+			//"rust-lang.rust",
+			"shd101wyy.markdown-preview-enhanced",
+			//"sibiraj-s.vscode-scss-formatter",
+			"slevesque.shader",
+			//"sterben.fpga-support",
+			"streetsidesoftware.code-spell-checker",
+			//"vahidk.tensorflow-snippets",
+			"VisualStudioExptTeam.vscodeintellicode",
+			//"vsciot-vscode.vscode-arduino",
+			//"vscodevim.vim"
+		],
+		"unwantedRecommendations": []
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Build: OpenGL C++ (Dynamic libraries)",
+				"group": "build",
+				"command": "g++",
+				"linux": {
+					"args": [
+						"-Wall",
+						"${workspaceRoot}/Source/*.cpp",
+						"-o",
+						"${workspaceRoot}/Build/Linux/Output.a",
+						"-lglfw3",
+						"-lopengl32",
+						"-lglew32"
+					]
+				},
+				"osx": {
+					"args": [
+						"-Wall",
+						"${workspaceRoot}/Source/*.cpp",
+						"-o",
+						"${workspaceRoot}/Build/MacOS/Output.a",
+						"-lglfw3",
+						"-lopengl32",
+						"-lglew32"
+					]
+				},
+				"windows": {
+					"args": [
+						"-Wall",
+						"${workspaceRoot}/Source/*.cpp",
+						"-o",
+						"${workspaceRoot}/Build/Windows/Output.exe",
+						"-lglfw3",
+						"-lopengl32",
+						"-lglew32"
+					]
+				},
+				"problemMatcher": []
+			},
+			{
+				"label": "Generate: Documentation",
+				"group": "build",
+				"type": "shell",
+				"command": "sh",
+				"args": [
+					"(cat ${workspaceRoot}\\Documentation\\Doxyfile & echo PROJECT_NAME = \"${input:name}\" & echo PROJECT_NUMBER = ${input:version} & echo PROJECT_BRIEF = \"${input:description}\") | doxygen -"
+				],
+				"windows": {
+					"command": "cmd",
+					"args": [
+						"/C",
+						"chcp 65001>nul & (type ${workspaceRoot}\\Documentation\\Doxyfile & echo PROJECT_NAME = \"${input:name}\" & echo PROJECT_NUMBER = ${input:version} & echo PROJECT_BRIEF = \"${input:description}\") | doxygen -"
+					]
+				},
+				"problemMatcher": []
+			},
+			{
+				"label": "Open: Documentation",
+				"group": "build",
+				"command": "chrome",
+				"args": [
+					"${workspaceRoot}/Documentation/html/index.html"
+				],
+				"problemMatcher": []
+			}
+		],
+		"inputs": [
+			{
+				"id": "name",
+				"type": "promptString",
+				"description": "Project name",
+				"default": "Práctica: Utilización de APIs Tridimensionales"
+			},
+			{
+				"id": "version",
+				"type": "pickString",
+				"description": "Project version",
+				"options": [
+					"0.0.1",
+					"0.0.2",
+					"0.1.0"
+				],
+				"default": "0.1.0"
+			},
+			{
+				"id": "description",
+				"type": "promptString",
+				"description": "Project brief",
+				"default": "Práctica en OpenGL para la asignatura Utilización de APIs Tridimensionales del Máster Universitario en Computación Gráfica, Realidad Virtual y Simulación de U-tad"
+			}
+		]
+	},
+	"launch": {
+		"version": "0.1.0",
+		"configurations": [
+			{
+				"name": "Debug: C++",
+				"type": "cppvsdbg",
+				"request": "launch",
+				"program": "Output",
+				"linux": {
+					"program": "${workspaceFolder}/Build/Linux/Output.a"
+				},
+				"osx": {
+					"program": "${workspaceFolder}/Build/MacOS/Output.a"
+				},
+				"windows": {
+					"program": "${workspaceFolder}/Build/Windows/Output.exe"
+				},
+				"args": [],
+				"cwd": "${workspaceFolder}"
+			}
+		],
+		"compounds": [],
+		"inputs": []
+	},
+}
