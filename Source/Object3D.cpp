@@ -1,8 +1,15 @@
+/**
+ * @file Object3D.cpp
+ * @author ImperatorMonclu (maurogarciamonclu@gmail.com)
+ * @brief 
+ * @version 0.1.0
+ * @date 14-12-2020
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 #include "Object3D.h"
-#include <glm/gtc/matrix_transform.hpp>
-#include <cmath>
-
-#define _USE_MATH_DEFINES
+#include "glm/gtc/matrix_transform.hpp"
 
 Object3D::Object3D()
 {
@@ -36,8 +43,7 @@ GLSLShader *Object3D::getGLSLShader()
 
 void Object3D::computeModelMtx()
 {
-    ////////////////////////////
-    modelMtx = glm::rotate(glm::translate(glm::scale(glm::mat4x4(1.0f), getSize()), getPos()), (float)M_PI, getRot());
+    modelMtx = /*glm::rotate(*/ glm::translate(glm::scale(glm::mat4x4(1.0f), getSize()), getPos()) /*, (float)M_PI, getRot())*/;
 }
 
 glm::mat4x4 Object3D::getModelMtx()

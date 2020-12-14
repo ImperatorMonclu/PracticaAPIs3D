@@ -1,39 +1,198 @@
 \hypertarget{class_mesh3_d}{}\doxysection{Mesh3D Class Reference}
 \label{class_mesh3_d}\index{Mesh3D@{Mesh3D}}
+
+
+Malla 3D donde almacena vértices, triángulos y color.  
+
+
+
+
+{\ttfamily \#include $<$Mesh3\+D.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_mesh3_d_ae0265399d0ef6ed823e0a9d498876f2f}\label{class_mesh3_d_ae0265399d0ef6ed823e0a9d498876f2f}} 
-glm\+::uint32 {\bfseries get\+Mesh\+ID} ()
-\item 
-\mbox{\Hypertarget{class_mesh3_d_ac53919f91af2ccc7aa136568383ef271}\label{class_mesh3_d_ac53919f91af2ccc7aa136568383ef271}} 
-void {\bfseries add\+Vertex} (struct \mbox{\hyperlink{structvertex__t}{vertex\+\_\+t}} vertex)
-\item 
-\mbox{\Hypertarget{class_mesh3_d_a6626c5f449d14e4271ceb4168dcbaf61}\label{class_mesh3_d_a6626c5f449d14e4271ceb4168dcbaf61}} 
-void {\bfseries add\+Triangle\+Idx} (glm\+::int32 v1, glm\+::int32 v2, glm\+::int32 v3)
-\item 
-\mbox{\Hypertarget{class_mesh3_d_a8ce94b8cf1d87f62d24794d7385f09e8}\label{class_mesh3_d_a8ce94b8cf1d87f62d24794d7385f09e8}} 
-std\+::vector$<$ struct \mbox{\hyperlink{structvertex__t}{vertex\+\_\+t}} $>$ $\ast$ {\bfseries get\+Vert\+List} ()
-\item 
-\mbox{\Hypertarget{class_mesh3_d_afd8174060b8b408ac00783d84258ce34}\label{class_mesh3_d_afd8174060b8b408ac00783d84258ce34}} 
-std\+::vector$<$ glm\+::int32 $>$ $\ast$ {\bfseries get\+Triangle\+Idx\+List} ()
-\item 
-\mbox{\Hypertarget{class_mesh3_d_ad7ef6d9d8c9619507ca61f7ff3e25661}\label{class_mesh3_d_ad7ef6d9d8c9619507ca61f7ff3e25661}} 
-glm\+::vec3 {\bfseries get\+Color\+R\+GB} ()
-\item 
-\mbox{\Hypertarget{class_mesh3_d_a0577cf15eaf41db427ef878b4a87fb98}\label{class_mesh3_d_a0577cf15eaf41db427ef878b4a87fb98}} 
-void {\bfseries set\+Color\+R\+GB} (float r, float g, float b)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Mesh 3D object. \end{DoxyCompactList}\item 
+glm\+::uint32 \mbox{\hyperlink{class_mesh3_d_ae0265399d0ef6ed823e0a9d498876f2f}{get\+Mesh\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Get the Mesh ID object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_ac53919f91af2ccc7aa136568383ef271}{add\+Vertex}} (struct \mbox{\hyperlink{structvertex__t}{vertex\+\_\+t}} vertex)
+\begin{DoxyCompactList}\small\item\em Añade un vértice a la lista de vértices de la malla. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a6626c5f449d14e4271ceb4168dcbaf61}{add\+Triangle\+Idx}} (glm\+::int32 v1, glm\+::int32 v2, glm\+::int32 v3)
+\begin{DoxyCompactList}\small\item\em Añade un triángulo a partir de 3 identificadores de vértices para la lista. La dirección del plano se rige por la regla de la mano derecha. \end{DoxyCompactList}\item 
+std\+::vector$<$ struct \mbox{\hyperlink{structvertex__t}{vertex\+\_\+t}} $>$ $\ast$ \mbox{\hyperlink{class_mesh3_d_a8ce94b8cf1d87f62d24794d7385f09e8}{get\+Vert\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the Vert List object. \end{DoxyCompactList}\item 
+std\+::vector$<$ glm\+::int32 $>$ $\ast$ \mbox{\hyperlink{class_mesh3_d_afd8174060b8b408ac00783d84258ce34}{get\+Triangle\+Idx\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the Triangle Idx List object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_mesh3_d_ad7ef6d9d8c9619507ca61f7ff3e25661}{get\+Color\+R\+GB}} ()
+\begin{DoxyCompactList}\small\item\em Get the Color R\+GB object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a0577cf15eaf41db427ef878b4a87fb98}{set\+Color\+R\+GB}} (float r, float g, float b)
+\begin{DoxyCompactList}\small\item\em Set the Color R\+GB object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Malla 3D donde almacena vértices, triángulos y color. 
+
+Definition at line 19 of file Mesh3\+D.\+h.
 
 
-Definition at line 6 of file Mesh3\+D.\+h.
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}\label{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}} 
+\index{Mesh3D@{Mesh3D}!Mesh3D@{Mesh3D}}
+\index{Mesh3D@{Mesh3D}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{Mesh3D()}{Mesh3D()}}
+{\footnotesize\ttfamily Mesh3\+D\+::\+Mesh3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Mesh 3D object. 
+
+$<$ Obtiene el identificador por una \mbox{\hyperlink{group__static_variables}{variable estática}}
+
+$<$ Se inicializa a color blanco
+
+Definition at line 14 of file Mesh3\+D.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh3_d_a6626c5f449d14e4271ceb4168dcbaf61}\label{class_mesh3_d_a6626c5f449d14e4271ceb4168dcbaf61}} 
+\index{Mesh3D@{Mesh3D}!addTriangleIdx@{addTriangleIdx}}
+\index{addTriangleIdx@{addTriangleIdx}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{addTriangleIdx()}{addTriangleIdx()}}
+{\footnotesize\ttfamily void Mesh3\+D\+::add\+Triangle\+Idx (\begin{DoxyParamCaption}\item[{glm\+::int32}]{v1,  }\item[{glm\+::int32}]{v2,  }\item[{glm\+::int32}]{v3 }\end{DoxyParamCaption})}
+
+
+
+Añade un triángulo a partir de 3 identificadores de vértices para la lista. La dirección del plano se rige por la regla de la mano derecha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v1} & identificador del vértice 1 \\
+\hline
+{\em v2} & identificador del vértice 2 \\
+\hline
+{\em v3} & identificador del vértice 3 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Mesh3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_mesh3_d_ac53919f91af2ccc7aa136568383ef271}\label{class_mesh3_d_ac53919f91af2ccc7aa136568383ef271}} 
+\index{Mesh3D@{Mesh3D}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily void Mesh3\+D\+::add\+Vertex (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structvertex__t}{vertex\+\_\+t}}}]{vertex }\end{DoxyParamCaption})}
+
+
+
+Añade un vértice a la lista de vértices de la malla. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & vértice que se añadirá \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Mesh3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_mesh3_d_ad7ef6d9d8c9619507ca61f7ff3e25661}\label{class_mesh3_d_ad7ef6d9d8c9619507ca61f7ff3e25661}} 
+\index{Mesh3D@{Mesh3D}!getColorRGB@{getColorRGB}}
+\index{getColorRGB@{getColorRGB}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{getColorRGB()}{getColorRGB()}}
+{\footnotesize\ttfamily glm\+::vec3 Mesh3\+D\+::get\+Color\+R\+GB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Color R\+GB object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 color R\+GB de la malla 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Mesh3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_mesh3_d_ae0265399d0ef6ed823e0a9d498876f2f}\label{class_mesh3_d_ae0265399d0ef6ed823e0a9d498876f2f}} 
+\index{Mesh3D@{Mesh3D}!getMeshID@{getMeshID}}
+\index{getMeshID@{getMeshID}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{getMeshID()}{getMeshID()}}
+{\footnotesize\ttfamily glm\+::uint32 Mesh3\+D\+::get\+Mesh\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Mesh ID object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::uint32 identificador de la malla 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Mesh3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_mesh3_d_afd8174060b8b408ac00783d84258ce34}\label{class_mesh3_d_afd8174060b8b408ac00783d84258ce34}} 
+\index{Mesh3D@{Mesh3D}!getTriangleIdxList@{getTriangleIdxList}}
+\index{getTriangleIdxList@{getTriangleIdxList}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{getTriangleIdxList()}{getTriangleIdxList()}}
+{\footnotesize\ttfamily std\+::vector$<$ glm\+::int32 $>$ $\ast$ Mesh3\+D\+::get\+Triangle\+Idx\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Triangle Idx List object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$glm\+::int32$>$$\ast$ lista con los identificadores de los vértices de cada triángulo de la malla 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file Mesh3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_mesh3_d_a8ce94b8cf1d87f62d24794d7385f09e8}\label{class_mesh3_d_a8ce94b8cf1d87f62d24794d7385f09e8}} 
+\index{Mesh3D@{Mesh3D}!getVertList@{getVertList}}
+\index{getVertList@{getVertList}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{getVertList()}{getVertList()}}
+{\footnotesize\ttfamily std\+::vector$<$ struct \mbox{\hyperlink{structvertex__t}{vertex\+\_\+t}} $>$ $\ast$ Mesh3\+D\+::get\+Vert\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Vert List object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$struct vertex\+\_\+t$>$$\ast$ lista con los vértices de la malla 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file Mesh3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_mesh3_d_a0577cf15eaf41db427ef878b4a87fb98}\label{class_mesh3_d_a0577cf15eaf41db427ef878b4a87fb98}} 
+\index{Mesh3D@{Mesh3D}!setColorRGB@{setColorRGB}}
+\index{setColorRGB@{setColorRGB}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{setColorRGB()}{setColorRGB()}}
+{\footnotesize\ttfamily void Mesh3\+D\+::set\+Color\+R\+GB (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+
+
+Set the Color R\+GB object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & cantidad de rojo \\
+\hline
+{\em g} & cantidad de verde \\
+\hline
+{\em b} & cantidad de azul \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file Mesh3\+D.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Source/Mesh3\+D.\+h\item 
-Source/Mesh3\+D.\+cpp\end{DoxyCompactItemize}
+Source/\mbox{\hyperlink{_mesh3_d_8h}{Mesh3\+D.\+h}}\item 
+Source/\mbox{\hyperlink{_mesh3_d_8cpp}{Mesh3\+D.\+cpp}}\end{DoxyCompactItemize}

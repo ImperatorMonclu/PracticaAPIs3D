@@ -72,34 +72,45 @@ $(function() {
 <div class="title">TriangleRot.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;TriangleRot.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;TriangleRot::TriangleRot()</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="class_mesh3_d.html">Mesh3D</a> *mesh = <span class="keyword">new</span> <a class="code" href="class_mesh3_d.html">Mesh3D</a>();</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="structvertex__t.html">vertex_t</a> v1;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    v1.pos = glm::vec3(0.0f, 1.0f, 0.0f);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="structvertex__t.html">vertex_t</a> v2;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    v2.pos = glm::vec3(-1.0f, -1.0f, 0.0f);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="structvertex__t.html">vertex_t</a> v3;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    v3.pos = glm::vec3(1.0f, -1.0f, 0.0f);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    mesh-&gt;addVertex(v1);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    mesh-&gt;addVertex(v2);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    mesh-&gt;addVertex(v3);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mesh-&gt;addTriangleIdx(0, 1, 2);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    setMesh(mesh);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> TriangleRot::step()</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<a href="_triangle_rot_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_triangle_rot_8h.html">TriangleRot.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_triangle_rot.html#ad7373c5f5c55b7e8bf48666d5e1fd985">   13</a></span>&#160;<a class="code" href="class_triangle_rot.html#ad7373c5f5c55b7e8bf48666d5e1fd985">TriangleRot::TriangleRot</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_mesh3_d.html">Mesh3D</a> *mesh = <span class="keyword">new</span> <a class="code" href="class_mesh3_d.html">Mesh3D</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="structvertex__t.html">vertex_t</a> v1;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    v1.<a class="code" href="structvertex__t.html#a58142fa432d5244ba248adbb5c79c7e3">pos</a> = glm::vec4(0.0f, 0.5f, 0.0f, 1.0f);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="structvertex__t.html">vertex_t</a> v2;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    v2.<a class="code" href="structvertex__t.html#a58142fa432d5244ba248adbb5c79c7e3">pos</a> = glm::vec4(-0.5f, 0.0f, 0.0f, 1.0f);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="structvertex__t.html">vertex_t</a> v3;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    v3.<a class="code" href="structvertex__t.html#a58142fa432d5244ba248adbb5c79c7e3">pos</a> = glm::vec4(0.5f, 0.0f, 0.0f, 1.0f);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    mesh-&gt;<a class="code" href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">addVertex</a>(v1);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    mesh-&gt;<a class="code" href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">addVertex</a>(v2);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mesh-&gt;<a class="code" href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">addVertex</a>(v3);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mesh-&gt;<a class="code" href="class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61">addTriangleIdx</a>(0, 2, 1);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">setMesh</a>(mesh);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_triangle_rot.html#aee0ce70ec65b1bbb9d935dd736cdc732">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_triangle_rot.html#aee0ce70ec65b1bbb9d935dd736cdc732">TriangleRot::step</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">setRot</a>(<a class="code" href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">getRot</a>() + glm::vec3(0.0f, 0.01f, 0.0f));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_mesh3_d_html"><div class="ttname"><a href="class_mesh3_d.html">Mesh3D</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8h_source.html#l00006">Mesh3D.h:7</a></div></div>
-<div class="ttc" id="astructvertex__t_html"><div class="ttname"><a href="structvertex__t.html">vertex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00004">Vertex.h:5</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_ac53919f91af2ccc7aa136568383ef271"><div class="ttname"><a href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">Mesh3D::addVertex</a></div><div class="ttdeci">void addVertex(struct vertex_t vertex)</div><div class="ttdoc">Añade un vértice a la lista de vértices de la malla.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00028">Mesh3D.cpp:28</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html"><div class="ttname"><a href="class_mesh3_d.html">Mesh3D</a></div><div class="ttdoc">Malla 3D donde almacena vértices, triángulos y color.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8h_source.html#l00019">Mesh3D.h:20</a></div></div>
+<div class="ttc" id="a_triangle_rot_8h_html"><div class="ttname"><a href="_triangle_rot_8h.html">TriangleRot.h</a></div></div>
+<div class="ttc" id="aclass_triangle_rot_html_ad7373c5f5c55b7e8bf48666d5e1fd985"><div class="ttname"><a href="class_triangle_rot.html#ad7373c5f5c55b7e8bf48666d5e1fd985">TriangleRot::TriangleRot</a></div><div class="ttdeci">TriangleRot()</div><div class="ttdoc">Construct a new Triangle Rot object.</div><div class="ttdef"><b>Definition:</b> <a href="_triangle_rot_8cpp_source.html#l00013">TriangleRot.cpp:13</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a1716c5ded18c38e887b70a2321469434"><div class="ttname"><a href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">Object3D::setRot</a></div><div class="ttdeci">void setRot(glm::vec3 rot)</div><div class="ttdoc">Set the Rot object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00064">Object3D.cpp:64</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_a6626c5f449d14e4271ceb4168dcbaf61"><div class="ttname"><a href="class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61">Mesh3D::addTriangleIdx</a></div><div class="ttdeci">void addTriangleIdx(glm::int32 v1, glm::int32 v2, glm::int32 v3)</div><div class="ttdoc">Añade un triángulo a partir de 3 identificadores de vértices para la lista. La dirección del plano se...</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00033">Mesh3D.cpp:33</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a4b7f38537bf7a73bb0feb6cc7300f031"><div class="ttname"><a href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">Object3D::setMesh</a></div><div class="ttdeci">void setMesh(Mesh3D *mesh)</div><div class="ttdoc">Set the Mesh object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00024">Object3D.cpp:24</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a9954e81b1ef37937e34bb7c64bb9f389"><div class="ttname"><a href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">Object3D::getRot</a></div><div class="ttdeci">glm::vec3 getRot()</div><div class="ttdoc">Get the Rot object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00069">Object3D.cpp:69</a></div></div>
+<div class="ttc" id="aclass_triangle_rot_html_aee0ce70ec65b1bbb9d935dd736cdc732"><div class="ttname"><a href="class_triangle_rot.html#aee0ce70ec65b1bbb9d935dd736cdc732">TriangleRot::step</a></div><div class="ttdeci">void step()</div><div class="ttdoc">Acción del triángulo en rotación.</div><div class="ttdef"><b>Definition:</b> <a href="_triangle_rot_8cpp_source.html#l00033">TriangleRot.cpp:33</a></div></div>
+<div class="ttc" id="astructvertex__t_html_a58142fa432d5244ba248adbb5c79c7e3"><div class="ttname"><a href="structvertex__t.html#a58142fa432d5244ba248adbb5c79c7e3">vertex_t::pos</a></div><div class="ttdeci">glm::vec4 pos</div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00020">Vertex.h:20</a></div></div>
+<div class="ttc" id="astructvertex__t_html"><div class="ttname"><a href="structvertex__t.html">vertex_t</a></div><div class="ttdoc">Información de un vértice.</div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00018">Vertex.h:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

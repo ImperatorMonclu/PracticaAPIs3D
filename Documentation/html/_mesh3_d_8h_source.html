@@ -72,56 +72,65 @@ $(function() {
 <div class="title">Mesh3D.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;Vertex.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_mesh3_d.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh3_d.html">Mesh3D</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">// Identificador único de la malla, asignado en el constructor del objeto</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//(PISTA: Se pueden usar variables de clase estática, actualizadas cada vez que se</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//crea un nuevo objeto Mesh3D)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    glm::uint32 meshID;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// color básico de esta malla</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    glm::vec3 colorRGB;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//Lista de vértices que forman la malla</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;struct vertex_t&gt; *vVertList;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//Lista de índices de vértices. Tres índices seguidos formarán un triángulo</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::vector&lt;glm::int32&gt; *vIdxList;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//constructor por defecto de la clase. Inicializa los atributos a valores por defecto</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_mesh3_d.html">Mesh3D</a>();</div>
+<a href="_mesh3_d_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vertex_8h.html">Vertex.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_mesh3_d.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh3_d.html">Mesh3D</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// Identificador único de la malla, asignado en el constructor del objeto</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//(PISTA: Se pueden usar variables de clase estática, actualizadas cada vez que se</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">//crea un nuevo objeto Mesh3D)</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    glm::uint32 meshID;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//devuelve el identificador de esta malla</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    glm::uint32 getMeshID();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// color básico de esta malla</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    glm::vec3 colorRGB;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//Método para añadir vértices a la malla</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> addVertex(<span class="keyword">struct</span> <a class="code" href="structvertex__t.html">vertex_t</a> vertex);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//Lista de vértices que forman la malla</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::vector&lt;struct vertex_t&gt; *vVertList;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//Método para añadir un triángulo en base a tres índices de vértices previamente</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//añadidos</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> addTriangleIdx(glm::int32 v1, glm::int32 v2, glm::int32 v3);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//Método para acceder a la lista de vértices almacenada</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;struct vertex_t&gt; *getVertList();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//Método para acceder a la lista de identificadores de vértices almacenada</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt;glm::int32&gt; *getTriangleIdxList();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//método para acceder al color básico de la malla</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    glm::vec3 getColorRGB();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> setColorRGB(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//Lista de índices de vértices. Tres índices seguidos formarán un triángulo</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::vector&lt;glm::int32&gt; *vIdxList;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//constructor por defecto de la clase. Inicializa los atributos a valores por defecto</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span>    <a class="code" href="class_mesh3_d.html#a8cdefca0bf7171afd91f2a1a88e05a7e">Mesh3D</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//devuelve el identificador de esta malla</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span>    glm::uint32 <a class="code" href="class_mesh3_d.html#ae0265399d0ef6ed823e0a9d498876f2f">getMeshID</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//Método para añadir vértices a la malla</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">addVertex</a>(<span class="keyword">struct</span> <a class="code" href="structvertex__t.html">vertex_t</a> vertex);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//Método para añadir un triángulo en base a tres índices de vértices previamente</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//añadidos</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61">addTriangleIdx</a>(glm::int32 v1, glm::int32 v2, glm::int32 v3);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//Método para acceder a la lista de vértices almacenada</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span>    std::vector&lt;struct vertex_t&gt; *<a class="code" href="class_mesh3_d.html#a8ce94b8cf1d87f62d24794d7385f09e8">getVertList</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//Método para acceder a la lista de identificadores de vértices almacenada</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span>    std::vector&lt;glm::int32&gt; *<a class="code" href="class_mesh3_d.html#afd8174060b8b408ac00783d84258ce34">getTriangleIdxList</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//método para acceder al color básico de la malla</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span>    glm::vec3 <a class="code" href="class_mesh3_d.html#ad7ef6d9d8c9619507ca61f7ff3e25661">getColorRGB</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh3_d.html#a0577cf15eaf41db427ef878b4a87fb98">setColorRGB</a>(<span class="keywordtype">float</span> r, <span class="keywordtype">float</span> g, <span class="keywordtype">float</span> b);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_mesh3_d_html"><div class="ttname"><a href="class_mesh3_d.html">Mesh3D</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8h_source.html#l00006">Mesh3D.h:7</a></div></div>
-<div class="ttc" id="astructvertex__t_html"><div class="ttname"><a href="structvertex__t.html">vertex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00004">Vertex.h:5</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_a8ce94b8cf1d87f62d24794d7385f09e8"><div class="ttname"><a href="class_mesh3_d.html#a8ce94b8cf1d87f62d24794d7385f09e8">Mesh3D::getVertList</a></div><div class="ttdeci">std::vector&lt; struct vertex_t &gt; * getVertList()</div><div class="ttdoc">Get the Vert List object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00040">Mesh3D.cpp:40</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_ac53919f91af2ccc7aa136568383ef271"><div class="ttname"><a href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">Mesh3D::addVertex</a></div><div class="ttdeci">void addVertex(struct vertex_t vertex)</div><div class="ttdoc">Añade un vértice a la lista de vértices de la malla.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00028">Mesh3D.cpp:28</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_ad7ef6d9d8c9619507ca61f7ff3e25661"><div class="ttname"><a href="class_mesh3_d.html#ad7ef6d9d8c9619507ca61f7ff3e25661">Mesh3D::getColorRGB</a></div><div class="ttdeci">glm::vec3 getColorRGB()</div><div class="ttdoc">Get the Color RGB object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00050">Mesh3D.cpp:50</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html"><div class="ttname"><a href="class_mesh3_d.html">Mesh3D</a></div><div class="ttdoc">Malla 3D donde almacena vértices, triángulos y color.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8h_source.html#l00019">Mesh3D.h:20</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_a0577cf15eaf41db427ef878b4a87fb98"><div class="ttname"><a href="class_mesh3_d.html#a0577cf15eaf41db427ef878b4a87fb98">Mesh3D::setColorRGB</a></div><div class="ttdeci">void setColorRGB(float r, float g, float b)</div><div class="ttdoc">Set the Color RGB object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00055">Mesh3D.cpp:55</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_a8cdefca0bf7171afd91f2a1a88e05a7e"><div class="ttname"><a href="class_mesh3_d.html#a8cdefca0bf7171afd91f2a1a88e05a7e">Mesh3D::Mesh3D</a></div><div class="ttdeci">Mesh3D()</div><div class="ttdoc">Construct a new Mesh 3D object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00014">Mesh3D.cpp:14</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_a6626c5f449d14e4271ceb4168dcbaf61"><div class="ttname"><a href="class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61">Mesh3D::addTriangleIdx</a></div><div class="ttdeci">void addTriangleIdx(glm::int32 v1, glm::int32 v2, glm::int32 v3)</div><div class="ttdoc">Añade un triángulo a partir de 3 identificadores de vértices para la lista. La dirección del plano se...</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00033">Mesh3D.cpp:33</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_afd8174060b8b408ac00783d84258ce34"><div class="ttname"><a href="class_mesh3_d.html#afd8174060b8b408ac00783d84258ce34">Mesh3D::getTriangleIdxList</a></div><div class="ttdeci">std::vector&lt; glm::int32 &gt; * getTriangleIdxList()</div><div class="ttdoc">Get the Triangle Idx List object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00045">Mesh3D.cpp:45</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_ae0265399d0ef6ed823e0a9d498876f2f"><div class="ttname"><a href="class_mesh3_d.html#ae0265399d0ef6ed823e0a9d498876f2f">Mesh3D::getMeshID</a></div><div class="ttdeci">glm::uint32 getMeshID()</div><div class="ttdoc">Get the Mesh ID object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00023">Mesh3D.cpp:23</a></div></div>
+<div class="ttc" id="a_vertex_8h_html"><div class="ttname"><a href="_vertex_8h.html">Vertex.h</a></div></div>
+<div class="ttc" id="astructvertex__t_html"><div class="ttname"><a href="structvertex__t.html">vertex_t</a></div><div class="ttdoc">Información de un vértice.</div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00018">Vertex.h:19</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

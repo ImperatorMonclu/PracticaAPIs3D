@@ -1,24 +1,75 @@
 \hypertarget{class_g_l_render}{}\doxysection{G\+L\+Render Class Reference}
 \label{class_g_l_render}\index{GLRender@{GLRender}}
+
+
+Inizializa Open\+GL y dibuja objetos 3D.  
+
+
+
+
+{\ttfamily \#include $<$G\+L\+Render.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_g_l_render_aa78638697ded3a0958c0118fe141f134}\label{class_g_l_render_aa78638697ded3a0958c0118fe141f134}} 
-void {\bfseries setup\+Obj} (\mbox{\hyperlink{class_object3_d}{Object3D}} $\ast$obj)
-\item 
-\mbox{\Hypertarget{class_g_l_render_aef963bfaf57a01bc6f06d77f37e77477}\label{class_g_l_render_aef963bfaf57a01bc6f06d77f37e77477}} 
-void {\bfseries draw\+Object} (\mbox{\hyperlink{class_object3_d}{Object3D}} $\ast$obj)
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_g_l_render_a497e953ceef0aa63790bac12da6a1369}\label{class_g_l_render_a497e953ceef0aa63790bac12da6a1369}} 
+\mbox{\hyperlink{class_g_l_render_a497e953ceef0aa63790bac12da6a1369}{G\+L\+Render}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new GL Render object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_render_aa78638697ded3a0958c0118fe141f134}{setup\+Obj}} (\mbox{\hyperlink{class_object3_d}{Object3D}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Carga la malla 3D de un objeto en memoria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_render_aef963bfaf57a01bc6f06d77f37e77477}{draw\+Object}} (\mbox{\hyperlink{class_object3_d}{Object3D}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Dibuja por pantalla un objeto. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Inizializa Open\+GL y dibuja objetos 3D. 
+
+Definition at line 19 of file G\+L\+Render.\+h.
 
 
-Definition at line 6 of file G\+L\+Render.\+h.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_l_render_aef963bfaf57a01bc6f06d77f37e77477}\label{class_g_l_render_aef963bfaf57a01bc6f06d77f37e77477}} 
+\index{GLRender@{GLRender}!drawObject@{drawObject}}
+\index{drawObject@{drawObject}!GLRender@{GLRender}}
+\doxysubsubsection{\texorpdfstring{drawObject()}{drawObject()}}
+{\footnotesize\ttfamily void G\+L\+Render\+::draw\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object3_d}{Object3D}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Dibuja por pantalla un objeto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & objeto 3D a dibujar \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file G\+L\+Render.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_render_aa78638697ded3a0958c0118fe141f134}\label{class_g_l_render_aa78638697ded3a0958c0118fe141f134}} 
+\index{GLRender@{GLRender}!setupObj@{setupObj}}
+\index{setupObj@{setupObj}!GLRender@{GLRender}}
+\doxysubsubsection{\texorpdfstring{setupObj()}{setupObj()}}
+{\footnotesize\ttfamily void G\+L\+Render\+::setup\+Obj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object3_d}{Object3D}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Carga la malla 3D de un objeto en memoria. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & objeto 3D a cargar \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file G\+L\+Render.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Source/G\+L\+Render.\+h\item 
-Source/G\+L\+Render.\+cpp\end{DoxyCompactItemize}
+Source/\mbox{\hyperlink{_g_l_render_8h}{G\+L\+Render.\+h}}\item 
+Source/\mbox{\hyperlink{_g_l_render_8cpp}{G\+L\+Render.\+cpp}}\end{DoxyCompactItemize}

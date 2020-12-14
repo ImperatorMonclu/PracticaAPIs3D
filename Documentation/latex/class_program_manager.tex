@@ -1,29 +1,91 @@
 \hypertarget{class_program_manager}{}\doxysection{Program\+Manager Class Reference}
 \label{class_program_manager}\index{ProgramManager@{ProgramManager}}
+
+
+Manager del programa el cual actua de patrón \char`\"{}\+Singleton\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$Program\+Manager.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_program_manager_ae3ea52e19fc89570d709fa484a550062}\label{class_program_manager_ae3ea52e19fc89570d709fa484a550062}} 
-glm\+::int32 {\bfseries get\+Mesh\+ID} ()
-\item 
-\mbox{\Hypertarget{class_program_manager_a4d2dbb4bd54bf43ff77b36b1c6db97a5}\label{class_program_manager_a4d2dbb4bd54bf43ff77b36b1c6db97a5}} 
-void {\bfseries set\+Mesh\+ID} (glm\+::int32 n\+Global\+Mesh\+ID)
-\end{DoxyCompactItemize}
+glm\+::int32 \mbox{\hyperlink{class_program_manager_ae3ea52e19fc89570d709fa484a550062}{get\+Mesh\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Get the Mesh ID object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_manager_a550691ec67734aad540576c0a892cced}{set\+Mesh\+ID}} (glm\+::int32 n\+Mesh\+ID)
+\begin{DoxyCompactList}\small\item\em Set the Mesh ID object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_program_manager_af18f8f578162a4c9f08c61c4dd3d5176}\label{class_program_manager_af18f8f578162a4c9f08c61c4dd3d5176}} 
-static \mbox{\hyperlink{class_program_manager}{Program\+Manager}} \& {\bfseries get\+Instance} ()
-\end{DoxyCompactItemize}
+static \mbox{\hyperlink{class_program_manager}{Program\+Manager}} \& \mbox{\hyperlink{class_program_manager_af18f8f578162a4c9f08c61c4dd3d5176}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the Instance object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Manager del programa el cual actua de patrón \char`\"{}\+Singleton\char`\"{}. 
+
+Definition at line 18 of file Program\+Manager.\+h.
 
 
-Definition at line 5 of file Program\+Manager.\+h.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_program_manager_af18f8f578162a4c9f08c61c4dd3d5176}\label{class_program_manager_af18f8f578162a4c9f08c61c4dd3d5176}} 
+\index{ProgramManager@{ProgramManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!ProgramManager@{ProgramManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_program_manager}{Program\+Manager}}\& Program\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the Instance object. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_program_manager}{Program\+Manager}}\& 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Program\+Manager.\+h.
+
+\mbox{\Hypertarget{class_program_manager_ae3ea52e19fc89570d709fa484a550062}\label{class_program_manager_ae3ea52e19fc89570d709fa484a550062}} 
+\index{ProgramManager@{ProgramManager}!getMeshID@{getMeshID}}
+\index{getMeshID@{getMeshID}!ProgramManager@{ProgramManager}}
+\doxysubsubsection{\texorpdfstring{getMeshID()}{getMeshID()}}
+{\footnotesize\ttfamily glm\+::int32 Program\+Manager\+::get\+Mesh\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Mesh ID object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::int32 identificador de la malla 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file Program\+Manager.\+h.
+
+\mbox{\Hypertarget{class_program_manager_a550691ec67734aad540576c0a892cced}\label{class_program_manager_a550691ec67734aad540576c0a892cced}} 
+\index{ProgramManager@{ProgramManager}!setMeshID@{setMeshID}}
+\index{setMeshID@{setMeshID}!ProgramManager@{ProgramManager}}
+\doxysubsubsection{\texorpdfstring{setMeshID()}{setMeshID()}}
+{\footnotesize\ttfamily void Program\+Manager\+::set\+Mesh\+ID (\begin{DoxyParamCaption}\item[{glm\+::int32}]{n\+Mesh\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Mesh ID object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Mesh\+ID} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Program\+Manager.\+h.
 
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Source/Program\+Manager.\+h\end{DoxyCompactItemize}
+Source/\mbox{\hyperlink{_program_manager_8h}{Program\+Manager.\+h}}\end{DoxyCompactItemize}

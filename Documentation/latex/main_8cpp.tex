@@ -1,0 +1,93 @@
+\hypertarget{main_8cpp}{}\doxysection{Source/main.cpp File Reference}
+\label{main_8cpp}\index{Source/main.cpp@{Source/main.cpp}}
+{\ttfamily \#include \char`\"{}G\+L\+Render.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Program\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Triangle\+Rot.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}G\+L\+F\+W/glfw3.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/gtx/string\+\_\+cast.\+hpp\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a2d6acae8f9b752a5d85795baf1005907}\label{main_8cpp_a2d6acae8f9b752a5d85795baf1005907}} 
+\#define {\bfseries W\+I\+N\+D\+O\+W\+\_\+\+N\+A\+ME}~\char`\"{}A\+P\+I\+S3D\char`\"{}
+\item 
+\mbox{\Hypertarget{main_8cpp_ab21210f7b05e8e5616b6155ebd777161}\label{main_8cpp_ab21210f7b05e8e5616b6155ebd777161}} 
+\#define {\bfseries F\+U\+L\+L\+S\+C\+R\+E\+EN}~false
+\item 
+\mbox{\Hypertarget{main_8cpp_a2cd109632a6dcccaa80b43561b1ab700}\label{main_8cpp_a2cd109632a6dcccaa80b43561b1ab700}} 
+\#define {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}~1280
+\item 
+\mbox{\Hypertarget{main_8cpp_a6974d08a74da681b3957b2fead2608b8}\label{main_8cpp_a6974d08a74da681b3957b2fead2608b8}} 
+\#define {\bfseries S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT}~720
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{main_8cpp_aee8048628ff2b5c026c9e15acdcaacb8}{init}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa la extensión G\+L\+EW y activa unos estados. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a2c3f6775325c30275d11c6abee2db6a0}{main}} (int, char $\ast$$\ast$)
+\begin{DoxyCompactList}\small\item\em Proceso principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Imperator\+Monclu (\href{mailto:maurogarciamonclu@gmail.com}{\texttt{ maurogarciamonclu@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+14-\/12-\/2020
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_aee8048628ff2b5c026c9e15acdcaacb8}\label{main_8cpp_aee8048628ff2b5c026c9e15acdcaacb8}} 
+\index{main.cpp@{main.cpp}!init@{init}}
+\index{init@{init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa la extensión G\+L\+EW y activa unos estados. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+$<$ Comprueba si puede iniciar G\+L\+EW
+
+$<$ Activa el estado G\+L\+\_\+\+D\+E\+P\+T\+H\+\_\+\+T\+E\+ST
+
+$<$ Activa el estado G\+L\+\_\+\+S\+C\+I\+S\+S\+O\+R\+\_\+\+T\+E\+ST
+
+Definition at line 34 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a2c3f6775325c30275d11c6abee2db6a0}\label{main_8cpp_a2c3f6775325c30275d11c6abee2db6a0}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{char $\ast$$\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Proceso principal. 
+
+\begin{DoxyReturn}{Returns}
+0 si ha terminado con éxito 
+
+-\/1 si ha terminado con errores 
+\end{DoxyReturn}
+$<$ Comprueba si puede iniciar G\+L\+FW
+
+$<$ Comprueba si la ventana se ha creado exitosamente
+
+Definition at line 51 of file main.\+cpp.
+

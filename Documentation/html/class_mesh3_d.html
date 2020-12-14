@@ -71,35 +71,277 @@ $(function() {
 <div class="title">Mesh3D Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Malla 3D donde almacena vértices, triángulos y color.  
+ <a href="class_mesh3_d.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_mesh3_d_8h_source.html">Mesh3D.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae0265399d0ef6ed823e0a9d498876f2f"><td class="memItemLeft" align="right" valign="top"><a id="ae0265399d0ef6ed823e0a9d498876f2f"></a>
-glm::uint32&#160;</td><td class="memItemRight" valign="bottom"><b>getMeshID</b> ()</td></tr>
+<tr class="memitem:a8cdefca0bf7171afd91f2a1a88e05a7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#a8cdefca0bf7171afd91f2a1a88e05a7e">Mesh3D</a> ()</td></tr>
+<tr class="memdesc:a8cdefca0bf7171afd91f2a1a88e05a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Mesh 3D object.  <a href="class_mesh3_d.html#a8cdefca0bf7171afd91f2a1a88e05a7e">More...</a><br /></td></tr>
+<tr class="separator:a8cdefca0bf7171afd91f2a1a88e05a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0265399d0ef6ed823e0a9d498876f2f"><td class="memItemLeft" align="right" valign="top">glm::uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#ae0265399d0ef6ed823e0a9d498876f2f">getMeshID</a> ()</td></tr>
+<tr class="memdesc:ae0265399d0ef6ed823e0a9d498876f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Mesh ID object.  <a href="class_mesh3_d.html#ae0265399d0ef6ed823e0a9d498876f2f">More...</a><br /></td></tr>
 <tr class="separator:ae0265399d0ef6ed823e0a9d498876f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac53919f91af2ccc7aa136568383ef271"><td class="memItemLeft" align="right" valign="top"><a id="ac53919f91af2ccc7aa136568383ef271"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addVertex</b> (struct <a class="el" href="structvertex__t.html">vertex_t</a> vertex)</td></tr>
+<tr class="memitem:ac53919f91af2ccc7aa136568383ef271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">addVertex</a> (struct <a class="el" href="structvertex__t.html">vertex_t</a> vertex)</td></tr>
+<tr class="memdesc:ac53919f91af2ccc7aa136568383ef271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un vértice a la lista de vértices de la malla.  <a href="class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271">More...</a><br /></td></tr>
 <tr class="separator:ac53919f91af2ccc7aa136568383ef271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6626c5f449d14e4271ceb4168dcbaf61"><td class="memItemLeft" align="right" valign="top"><a id="a6626c5f449d14e4271ceb4168dcbaf61"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addTriangleIdx</b> (glm::int32 v1, glm::int32 v2, glm::int32 v3)</td></tr>
+<tr class="memitem:a6626c5f449d14e4271ceb4168dcbaf61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61">addTriangleIdx</a> (glm::int32 v1, glm::int32 v2, glm::int32 v3)</td></tr>
+<tr class="memdesc:a6626c5f449d14e4271ceb4168dcbaf61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un triángulo a partir de 3 identificadores de vértices para la lista. La dirección del plano se rige por la regla de la mano derecha.  <a href="class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61">More...</a><br /></td></tr>
 <tr class="separator:a6626c5f449d14e4271ceb4168dcbaf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ce94b8cf1d87f62d24794d7385f09e8"><td class="memItemLeft" align="right" valign="top"><a id="a8ce94b8cf1d87f62d24794d7385f09e8"></a>
-std::vector&lt; struct <a class="el" href="structvertex__t.html">vertex_t</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getVertList</b> ()</td></tr>
+<tr class="memitem:a8ce94b8cf1d87f62d24794d7385f09e8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; struct <a class="el" href="structvertex__t.html">vertex_t</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#a8ce94b8cf1d87f62d24794d7385f09e8">getVertList</a> ()</td></tr>
+<tr class="memdesc:a8ce94b8cf1d87f62d24794d7385f09e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Vert List object.  <a href="class_mesh3_d.html#a8ce94b8cf1d87f62d24794d7385f09e8">More...</a><br /></td></tr>
 <tr class="separator:a8ce94b8cf1d87f62d24794d7385f09e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd8174060b8b408ac00783d84258ce34"><td class="memItemLeft" align="right" valign="top"><a id="afd8174060b8b408ac00783d84258ce34"></a>
-std::vector&lt; glm::int32 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getTriangleIdxList</b> ()</td></tr>
+<tr class="memitem:afd8174060b8b408ac00783d84258ce34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; glm::int32 &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#afd8174060b8b408ac00783d84258ce34">getTriangleIdxList</a> ()</td></tr>
+<tr class="memdesc:afd8174060b8b408ac00783d84258ce34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Triangle Idx List object.  <a href="class_mesh3_d.html#afd8174060b8b408ac00783d84258ce34">More...</a><br /></td></tr>
 <tr class="separator:afd8174060b8b408ac00783d84258ce34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ef6d9d8c9619507ca61f7ff3e25661"><td class="memItemLeft" align="right" valign="top"><a id="ad7ef6d9d8c9619507ca61f7ff3e25661"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getColorRGB</b> ()</td></tr>
+<tr class="memitem:ad7ef6d9d8c9619507ca61f7ff3e25661"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#ad7ef6d9d8c9619507ca61f7ff3e25661">getColorRGB</a> ()</td></tr>
+<tr class="memdesc:ad7ef6d9d8c9619507ca61f7ff3e25661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Color RGB object.  <a href="class_mesh3_d.html#ad7ef6d9d8c9619507ca61f7ff3e25661">More...</a><br /></td></tr>
 <tr class="separator:ad7ef6d9d8c9619507ca61f7ff3e25661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0577cf15eaf41db427ef878b4a87fb98"><td class="memItemLeft" align="right" valign="top"><a id="a0577cf15eaf41db427ef878b4a87fb98"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setColorRGB</b> (float r, float g, float b)</td></tr>
+<tr class="memitem:a0577cf15eaf41db427ef878b4a87fb98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mesh3_d.html#a0577cf15eaf41db427ef878b4a87fb98">setColorRGB</a> (float r, float g, float b)</td></tr>
+<tr class="memdesc:a0577cf15eaf41db427ef878b4a87fb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Color RGB object.  <a href="class_mesh3_d.html#a0577cf15eaf41db427ef878b4a87fb98">More...</a><br /></td></tr>
 <tr class="separator:a0577cf15eaf41db427ef878b4a87fb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_mesh3_d_8h_source.html#l00006">6</a> of file <a class="el" href="_mesh3_d_8h_source.html">Mesh3D.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Malla 3D donde almacena vértices, triángulos y color. </p>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8h_source.html#l00019">19</a> of file <a class="el" href="_mesh3_d_8h_source.html">Mesh3D.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8cdefca0bf7171afd91f2a1a88e05a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cdefca0bf7171afd91f2a1a88e05a7e">&#9670;&nbsp;</a></span>Mesh3D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mesh3D::Mesh3D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Mesh 3D object. </p>
+<p>&lt; Obtiene el identificador por una <a class="el" href="group__static_variables.html">variable estática</a></p>
+<p>&lt; Se inicializa a color blanco</p>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00014">14</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6626c5f449d14e4271ceb4168dcbaf61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6626c5f449d14e4271ceb4168dcbaf61">&#9670;&nbsp;</a></span>addTriangleIdx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mesh3D::addTriangleIdx </td>
+          <td>(</td>
+          <td class="paramtype">glm::int32&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::int32&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::int32&#160;</td>
+          <td class="paramname"><em>v3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un triángulo a partir de 3 identificadores de vértices para la lista. La dirección del plano se rige por la regla de la mano derecha. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v1</td><td>identificador del vértice 1 </td></tr>
+    <tr><td class="paramname">v2</td><td>identificador del vértice 2 </td></tr>
+    <tr><td class="paramname">v3</td><td>identificador del vértice 3 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00033">33</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac53919f91af2ccc7aa136568383ef271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53919f91af2ccc7aa136568383ef271">&#9670;&nbsp;</a></span>addVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mesh3D::addVertex </td>
+          <td>(</td>
+          <td class="paramtype">struct <a class="el" href="structvertex__t.html">vertex_t</a>&#160;</td>
+          <td class="paramname"><em>vertex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un vértice a la lista de vértices de la malla. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertex</td><td>vértice que se añadirá </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00028">28</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad7ef6d9d8c9619507ca61f7ff3e25661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7ef6d9d8c9619507ca61f7ff3e25661">&#9670;&nbsp;</a></span>getColorRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Mesh3D::getColorRGB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Color RGB object. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::vec3 color RGB de la malla </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00050">50</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae0265399d0ef6ed823e0a9d498876f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0265399d0ef6ed823e0a9d498876f2f">&#9670;&nbsp;</a></span>getMeshID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::uint32 Mesh3D::getMeshID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Mesh ID object. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::uint32 identificador de la malla </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00023">23</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afd8174060b8b408ac00783d84258ce34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8174060b8b408ac00783d84258ce34">&#9670;&nbsp;</a></span>getTriangleIdxList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; glm::int32 &gt; * Mesh3D::getTriangleIdxList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Triangle Idx List object. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;glm::int32&gt;* lista con los identificadores de los vértices de cada triángulo de la malla </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00045">45</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ce94b8cf1d87f62d24794d7385f09e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce94b8cf1d87f62d24794d7385f09e8">&#9670;&nbsp;</a></span>getVertList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; struct <a class="el" href="structvertex__t.html">vertex_t</a> &gt; * Mesh3D::getVertList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Vert List object. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;struct vertex_t&gt;* lista con los vértices de la malla </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00040">40</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a0577cf15eaf41db427ef878b4a87fb98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0577cf15eaf41db427ef878b4a87fb98">&#9670;&nbsp;</a></span>setColorRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mesh3D::setColorRGB </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Color RGB object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>cantidad de rojo </td></tr>
+    <tr><td class="paramname">g</td><td>cantidad de verde </td></tr>
+    <tr><td class="paramname">b</td><td>cantidad de azul </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_mesh3_d_8cpp_source.html#l00055">55</a> of file <a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>Source/<a class="el" href="_mesh3_d_8h_source.html">Mesh3D.h</a></li>
 <li>Source/<a class="el" href="_mesh3_d_8cpp_source.html">Mesh3D.cpp</a></li>
 </ul>

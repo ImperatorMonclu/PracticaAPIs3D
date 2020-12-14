@@ -1,5 +1,14 @@
 \hypertarget{class_object3_d}{}\doxysection{Object3D Class Reference}
 \label{class_object3_d}\index{Object3D@{Object3D}}
+
+
+Objeto abstracto básico renderizable.  
+
+
+
+
+{\ttfamily \#include $<$Object3\+D.\+h$>$}
+
 Inheritance diagram for Object3D\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,55 +18,247 @@ Inheritance diagram for Object3D\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{class_object3_d_ae3a1b17fb43ab59f5cf7b0ee21b9120b}\label{class_object3_d_ae3a1b17fb43ab59f5cf7b0ee21b9120b}} 
+\mbox{\hyperlink{class_object3_d_ae3a1b17fb43ab59f5cf7b0ee21b9120b}{Object3D}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Object 3D object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object3_d_afe19409a8c45dd68a42a1580175db121}\label{class_object3_d_afe19409a8c45dd68a42a1580175db121}} 
-virtual void {\bfseries step} ()=0
-\item 
-\mbox{\Hypertarget{class_object3_d_a4b7f38537bf7a73bb0feb6cc7300f031}\label{class_object3_d_a4b7f38537bf7a73bb0feb6cc7300f031}} 
-void {\bfseries set\+Mesh} (\mbox{\hyperlink{class_mesh3_d}{Mesh3D}} $\ast$mesh)
-\item 
-\mbox{\Hypertarget{class_object3_d_af1cecd4eaae8e0a0b8742f525be25711}\label{class_object3_d_af1cecd4eaae8e0a0b8742f525be25711}} 
-\mbox{\hyperlink{class_mesh3_d}{Mesh3D}} $\ast$ {\bfseries get\+Mesh} ()
-\item 
-\mbox{\Hypertarget{class_object3_d_aa48845017f598d2d926b7f87bdc0b5ea}\label{class_object3_d_aa48845017f598d2d926b7f87bdc0b5ea}} 
-void {\bfseries set\+G\+L\+S\+L\+Shader} (\mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} $\ast$shader)
-\item 
-\mbox{\Hypertarget{class_object3_d_a03aa0541a95e6c09d5a0b69554fd7153}\label{class_object3_d_a03aa0541a95e6c09d5a0b69554fd7153}} 
-\mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} $\ast$ {\bfseries get\+G\+L\+S\+L\+Shader} ()
-\item 
+virtual void \mbox{\hyperlink{class_object3_d_afe19409a8c45dd68a42a1580175db121}{step}} ()=0
+\begin{DoxyCompactList}\small\item\em Acción del objeto que se construye en clases hijas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object3_d_a4b7f38537bf7a73bb0feb6cc7300f031}{set\+Mesh}} (\mbox{\hyperlink{class_mesh3_d}{Mesh3D}} $\ast$mesh)
+\begin{DoxyCompactList}\small\item\em Set the Mesh object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d}{Mesh3D}} $\ast$ \mbox{\hyperlink{class_object3_d_af1cecd4eaae8e0a0b8742f525be25711}{get\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em Get the Mesh object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object3_d_aa48845017f598d2d926b7f87bdc0b5ea}{set\+G\+L\+S\+L\+Shader}} (\mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} $\ast$shader)
+\begin{DoxyCompactList}\small\item\em Set the G\+L\+SL Shader object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} $\ast$ \mbox{\hyperlink{class_object3_d_a03aa0541a95e6c09d5a0b69554fd7153}{get\+G\+L\+S\+L\+Shader}} ()
+\begin{DoxyCompactList}\small\item\em Get the G\+L\+SL Shader object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_object3_d_a4ddfd89da7a07375b44c637b5710048b}\label{class_object3_d_a4ddfd89da7a07375b44c637b5710048b}} 
-void {\bfseries compute\+Model\+Mtx} ()
-\item 
-\mbox{\Hypertarget{class_object3_d_a54b1ffa3bba271bef270e1e15b29cf29}\label{class_object3_d_a54b1ffa3bba271bef270e1e15b29cf29}} 
-glm\+::mat4x4 {\bfseries get\+Model\+Mtx} ()
-\item 
-\mbox{\Hypertarget{class_object3_d_af0855a09269696bdf9e24bacc1c5f4d8}\label{class_object3_d_af0855a09269696bdf9e24bacc1c5f4d8}} 
-void {\bfseries set\+Pos} (glm\+::vec3 pos)
-\item 
-\mbox{\Hypertarget{class_object3_d_ab89464caa0aa1ba45e3d864318ffaf0e}\label{class_object3_d_ab89464caa0aa1ba45e3d864318ffaf0e}} 
-glm\+::vec3 {\bfseries get\+Pos} ()
-\item 
-\mbox{\Hypertarget{class_object3_d_a1716c5ded18c38e887b70a2321469434}\label{class_object3_d_a1716c5ded18c38e887b70a2321469434}} 
-void {\bfseries set\+Rot} (glm\+::vec3 rot)
-\item 
-\mbox{\Hypertarget{class_object3_d_a9954e81b1ef37937e34bb7c64bb9f389}\label{class_object3_d_a9954e81b1ef37937e34bb7c64bb9f389}} 
-glm\+::vec3 {\bfseries get\+Rot} ()
-\item 
-\mbox{\Hypertarget{class_object3_d_ade632e7ae42715904b92f9e20b90b104}\label{class_object3_d_ade632e7ae42715904b92f9e20b90b104}} 
-void {\bfseries set\+Size} (glm\+::vec3 size)
-\item 
-\mbox{\Hypertarget{class_object3_d_ae80bdfca8f037370f1575d5f09d26ae9}\label{class_object3_d_ae80bdfca8f037370f1575d5f09d26ae9}} 
-glm\+::vec3 {\bfseries get\+Size} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_object3_d_a4ddfd89da7a07375b44c637b5710048b}{compute\+Model\+Mtx}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza la matriz modelo del objeto 3D. \end{DoxyCompactList}\item 
+glm\+::mat4x4 \mbox{\hyperlink{class_object3_d_a54b1ffa3bba271bef270e1e15b29cf29}{get\+Model\+Mtx}} ()
+\begin{DoxyCompactList}\small\item\em Get the Model Mtx object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object3_d_af0855a09269696bdf9e24bacc1c5f4d8}{set\+Pos}} (glm\+::vec3 pos)
+\begin{DoxyCompactList}\small\item\em Set the Pos object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_object3_d_ab89464caa0aa1ba45e3d864318ffaf0e}{get\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Get the Pos object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object3_d_a1716c5ded18c38e887b70a2321469434}{set\+Rot}} (glm\+::vec3 rot)
+\begin{DoxyCompactList}\small\item\em Set the Rot object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_object3_d_a9954e81b1ef37937e34bb7c64bb9f389}{get\+Rot}} ()
+\begin{DoxyCompactList}\small\item\em Get the Rot object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object3_d_ade632e7ae42715904b92f9e20b90b104}{set\+Size}} (glm\+::vec3 size)
+\begin{DoxyCompactList}\small\item\em Set the Size object. \end{DoxyCompactList}\item 
+glm\+::vec3 \mbox{\hyperlink{class_object3_d_ae80bdfca8f037370f1575d5f09d26ae9}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the Size object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Objeto abstracto básico renderizable. 
+
+Definition at line 19 of file Object3\+D.\+h.
 
 
-Definition at line 5 of file Object3\+D.\+h.
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_object3_d_a03aa0541a95e6c09d5a0b69554fd7153}\label{class_object3_d_a03aa0541a95e6c09d5a0b69554fd7153}} 
+\index{Object3D@{Object3D}!getGLSLShader@{getGLSLShader}}
+\index{getGLSLShader@{getGLSLShader}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{getGLSLShader()}{getGLSLShader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} $\ast$ Object3\+D\+::get\+G\+L\+S\+L\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the G\+L\+SL Shader object. 
+
+\begin{DoxyReturn}{Returns}
+G\+L\+S\+L\+Shader$\ast$ shader del objeto 3D 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_af1cecd4eaae8e0a0b8742f525be25711}\label{class_object3_d_af1cecd4eaae8e0a0b8742f525be25711}} 
+\index{Object3D@{Object3D}!getMesh@{getMesh}}
+\index{getMesh@{getMesh}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{getMesh()}{getMesh()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} $\ast$ Object3\+D\+::get\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Mesh object. 
+
+\begin{DoxyReturn}{Returns}
+Mesh3\+D$\ast$ malla 3D del objeto 3D 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_a54b1ffa3bba271bef270e1e15b29cf29}\label{class_object3_d_a54b1ffa3bba271bef270e1e15b29cf29}} 
+\index{Object3D@{Object3D}!getModelMtx@{getModelMtx}}
+\index{getModelMtx@{getModelMtx}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{getModelMtx()}{getModelMtx()}}
+{\footnotesize\ttfamily glm\+::mat4x4 Object3\+D\+::get\+Model\+Mtx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Model Mtx object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::mat4x4 matriz modelo del objeto 3D 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_ab89464caa0aa1ba45e3d864318ffaf0e}\label{class_object3_d_ab89464caa0aa1ba45e3d864318ffaf0e}} 
+\index{Object3D@{Object3D}!getPos@{getPos}}
+\index{getPos@{getPos}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{getPos()}{getPos()}}
+{\footnotesize\ttfamily glm\+::vec3 Object3\+D\+::get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Pos object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 posición del objeto 3D 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_a9954e81b1ef37937e34bb7c64bb9f389}\label{class_object3_d_a9954e81b1ef37937e34bb7c64bb9f389}} 
+\index{Object3D@{Object3D}!getRot@{getRot}}
+\index{getRot@{getRot}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{getRot()}{getRot()}}
+{\footnotesize\ttfamily glm\+::vec3 Object3\+D\+::get\+Rot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Rot object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 rotación del objeto 3D 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_ae80bdfca8f037370f1575d5f09d26ae9}\label{class_object3_d_ae80bdfca8f037370f1575d5f09d26ae9}} 
+\index{Object3D@{Object3D}!getSize@{getSize}}
+\index{getSize@{getSize}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily glm\+::vec3 Object3\+D\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Size object. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec3 tamaño del objeto 3D 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_aa48845017f598d2d926b7f87bdc0b5ea}\label{class_object3_d_aa48845017f598d2d926b7f87bdc0b5ea}} 
+\index{Object3D@{Object3D}!setGLSLShader@{setGLSLShader}}
+\index{setGLSLShader@{setGLSLShader}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{setGLSLShader()}{setGLSLShader()}}
+{\footnotesize\ttfamily void Object3\+D\+::set\+G\+L\+S\+L\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} $\ast$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Set the G\+L\+SL Shader object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & nuevo shader del objeto 3D \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_a4b7f38537bf7a73bb0feb6cc7300f031}\label{class_object3_d_a4b7f38537bf7a73bb0feb6cc7300f031}} 
+\index{Object3D@{Object3D}!setMesh@{setMesh}}
+\index{setMesh@{setMesh}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{setMesh()}{setMesh()}}
+{\footnotesize\ttfamily void Object3\+D\+::set\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mesh3_d}{Mesh3D}} $\ast$}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Set the Mesh object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & nueva malla 3D del objeto 3D \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_af0855a09269696bdf9e24bacc1c5f4d8}\label{class_object3_d_af0855a09269696bdf9e24bacc1c5f4d8}} 
+\index{Object3D@{Object3D}!setPos@{setPos}}
+\index{setPos@{setPos}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily void Object3\+D\+::set\+Pos (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{pos }\end{DoxyParamCaption})}
+
+
+
+Set the Pos object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & nueva posición del objeto 3D \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_a1716c5ded18c38e887b70a2321469434}\label{class_object3_d_a1716c5ded18c38e887b70a2321469434}} 
+\index{Object3D@{Object3D}!setRot@{setRot}}
+\index{setRot@{setRot}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{setRot()}{setRot()}}
+{\footnotesize\ttfamily void Object3\+D\+::set\+Rot (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{rot }\end{DoxyParamCaption})}
+
+
+
+Set the Rot object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rot} & nueva rotación del objeto 3D \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 64 of file Object3\+D.\+cpp.
+
+\mbox{\Hypertarget{class_object3_d_ade632e7ae42715904b92f9e20b90b104}\label{class_object3_d_ade632e7ae42715904b92f9e20b90b104}} 
+\index{Object3D@{Object3D}!setSize@{setSize}}
+\index{setSize@{setSize}!Object3D@{Object3D}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Object3\+D\+::set\+Size (\begin{DoxyParamCaption}\item[{glm\+::vec3}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the Size object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & nuevo tamaño del objeto 3D \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Object3\+D.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Source/Object3\+D.\+h\item 
-Source/Object3\+D.\+cpp\end{DoxyCompactItemize}
+Source/\mbox{\hyperlink{_object3_d_8h}{Object3\+D.\+h}}\item 
+Source/\mbox{\hyperlink{_object3_d_8cpp}{Object3\+D.\+cpp}}\end{DoxyCompactItemize}

@@ -72,62 +72,75 @@ $(function() {
 <div class="title">GLSLShader.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_g_l_s_l_shader.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">//identificador del programa</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    glm::uint32 programID;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="comment">//lista con las variables uniform que puede utilizar este shader</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::map&lt;std::string, glm::uint32&gt; vShaderAttribs;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">char</span> error[1024];</div>
+<a href="_g_l_s_l_shader_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;GL/glew.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;glm/glm.hpp&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ~<a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">//Constructor de clase, recibe por parámetros el nombre de los ficheros que se</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// compilarán para cargar el shader</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span>    <a class="code" href="class_g_l_s_l_shader.html#ade6e805d01f4af5718387d12b4ddc23b">GLSLShader</a>(std::string vertexPrg, std::string fragPrg);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Devuelve el identificador de OpenGL del programa</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span>    uint32_t <a class="code" href="class_g_l_s_l_shader.html#a979d92e8decd688500cdf58e7b3e1146">getId</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Obtiene el mensaje de error generado al compilar o enlazar</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *getError(); <span class="comment">//void</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Activa el uso de este programa</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> use();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Activa la escritura de las variables attribute,</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// y especifica su formato</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> setupAttribs();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Obtiene la localización de una variable uniform</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span>    glm::uint32 <a class="code" href="class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5">getLocation</a>(std::string name);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Da valor a una variable uniform</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#a1e0b42282e9323371dd538a0a9cc63a6">setInt</a>(glm::uint32 loc, <span class="keywordtype">int</span> val);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> setFloat(glm::uint32 loc, <span class="keywordtype">float</span> val);</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_g_l_s_l_shader.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//identificador del programa</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    glm::uint32 programID;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//lista con las variables uniform que puede utilizar este shader</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::map&lt;std::string, glm::uint32&gt; vShaderAttribs;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">char</span> *error;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//Constructor de clase, recibe por parámetros el nombre de los ficheros que se</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// compilarán para cargar el shader</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>    <a class="code" href="class_g_l_s_l_shader.html#ade6e805d01f4af5718387d12b4ddc23b">GLSLShader</a>(std::string vertexPrg, std::string fragPrg);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Devuelve el identificador de OpenGL del programa</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>    glm::uint32 <a class="code" href="class_g_l_s_l_shader.html#a979d92e8decd688500cdf58e7b3e1146">getId</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Obtiene el mensaje de error generado al compilar o enlazar</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="class_g_l_s_l_shader.html#a96553c7f3c81589719db4ca5ac7288c5">getError</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Activa el uso de este programa</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#a9ac80ec08b736dc5dc89e68f31e9bd8d">use</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> setVec3(glm::uint32 loc, <span class="keyword">const</span> glm::vec3 &amp;vec);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> setVec4(glm::uint32 loc, <span class="keyword">const</span> glm::vec4 &amp;vec); <span class="comment">//void</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> setMatrix(glm::uint32 loc, <span class="keyword">const</span> glm::mat4 &amp;matrix); <span class="comment">//glUniformMatrix</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Activa la escritura de las variables attribute,</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// y especifica su formato</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#adc3bff405da837b64a8196e09c17058a">setupAttribs</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Obtiene la localización de una variable uniform</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span>    glm::uint32 <a class="code" href="class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5">getLocation</a>(std::string name);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Da valor a una variable uniform</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#a1e0b42282e9323371dd538a0a9cc63a6">setInt</a>(glm::uint32 loc, <span class="keywordtype">int</span> val);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#a24245090ce60e6e1c07a3187238352b3">setFloat</a>(glm::uint32 loc, <span class="keywordtype">float</span> val);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#adb91e9d9d8c66d70c5aff854c56adf49">setVec3</a>(glm::uint32 loc, <span class="keyword">const</span> glm::vec3 &amp;vec);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#a807c4cd89d6d6c026725325032328888">setVec4</a>(glm::uint32 loc, <span class="keyword">const</span> glm::vec4 &amp;vec);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_g_l_s_l_shader.html#a44e23c0a2a8f660515f4b538b10e19d9">setMatrix</a>(glm::uint32 loc, <span class="keyword">const</span> glm::mat4 &amp;matrix);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *readFile(std::string filename);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">int</span> compileShader(<span class="keyword">const</span> <span class="keywordtype">char</span> *code, GLenum shaderType);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_g_l_s_l_shader_html_a1e0b42282e9323371dd538a0a9cc63a6"><div class="ttname"><a href="class_g_l_s_l_shader.html#a1e0b42282e9323371dd538a0a9cc63a6">GLSLShader::setInt</a></div><div class="ttdeci">void setInt(glm::uint32 loc, int val)</div><div class="ttdoc">Modifica una variable del shader de tipo entero a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00107">GLSLShader.cpp:107</a></div></div>
-<div class="ttc" id="aclass_g_l_s_l_shader_html_a979d92e8decd688500cdf58e7b3e1146"><div class="ttname"><a href="class_g_l_s_l_shader.html#a979d92e8decd688500cdf58e7b3e1146">GLSLShader::getId</a></div><div class="ttdeci">uint32_t getId()</div><div class="ttdoc">Get the Id object.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00068">GLSLShader.cpp:68</a></div></div>
-<div class="ttc" id="aclass_g_l_s_l_shader_html_ade6e805d01f4af5718387d12b4ddc23b"><div class="ttname"><a href="class_g_l_s_l_shader.html#ade6e805d01f4af5718387d12b4ddc23b">GLSLShader::GLSLShader</a></div><div class="ttdeci">GLSLShader(std::string vertexPrg, std::string fragPrg)</div><div class="ttdoc">Construct a new GLSLShader object.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00014">GLSLShader.cpp:14</a></div></div>
-<div class="ttc" id="aclass_g_l_s_l_shader_html"><div class="ttname"><a href="class_g_l_s_l_shader.html">GLSLShader</a></div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8h_source.html#l00006">GLSLShader.h:7</a></div></div>
-<div class="ttc" id="aclass_g_l_s_l_shader_html_aefe8b325deeb9b3560fa05ac9094dfa5"><div class="ttname"><a href="class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5">GLSLShader::getLocation</a></div><div class="ttdeci">glm::uint32 getLocation(std::string name)</div><div class="ttdoc">Obtiene la localización de una variable específica del shader por su nombre.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00102">GLSLShader.cpp:102</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a9ac80ec08b736dc5dc89e68f31e9bd8d"><div class="ttname"><a href="class_g_l_s_l_shader.html#a9ac80ec08b736dc5dc89e68f31e9bd8d">GLSLShader::use</a></div><div class="ttdeci">void use()</div><div class="ttdoc">Activa el programa.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00055">GLSLShader.cpp:55</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a1e0b42282e9323371dd538a0a9cc63a6"><div class="ttname"><a href="class_g_l_s_l_shader.html#a1e0b42282e9323371dd538a0a9cc63a6">GLSLShader::setInt</a></div><div class="ttdeci">void setInt(glm::uint32 loc, int val)</div><div class="ttdoc">Modifica una variable del shader de tipo entero a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00074">GLSLShader.cpp:74</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a979d92e8decd688500cdf58e7b3e1146"><div class="ttname"><a href="class_g_l_s_l_shader.html#a979d92e8decd688500cdf58e7b3e1146">GLSLShader::getId</a></div><div class="ttdeci">glm::uint32 getId()</div><div class="ttdoc">Get the Id object.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00045">GLSLShader.cpp:45</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_ade6e805d01f4af5718387d12b4ddc23b"><div class="ttname"><a href="class_g_l_s_l_shader.html#ade6e805d01f4af5718387d12b4ddc23b">GLSLShader::GLSLShader</a></div><div class="ttdeci">GLSLShader(std::string vertexPrg, std::string fragPrg)</div><div class="ttdoc">Construct a new GLSLShader object.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00016">GLSLShader.cpp:16</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html"><div class="ttname"><a href="class_g_l_s_l_shader.html">GLSLShader</a></div><div class="ttdoc">Shader de GLSL. Permite modificar las variables uniformes del shader.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8h_source.html#l00022">GLSLShader.h:23</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_adb91e9d9d8c66d70c5aff854c56adf49"><div class="ttname"><a href="class_g_l_s_l_shader.html#adb91e9d9d8c66d70c5aff854c56adf49">GLSLShader::setVec3</a></div><div class="ttdeci">void setVec3(glm::uint32 loc, const glm::vec3 &amp;vec)</div><div class="ttdoc">Modifica una variable del shader de tipo vector de tamaño 3 a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00090">GLSLShader.cpp:90</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a24245090ce60e6e1c07a3187238352b3"><div class="ttname"><a href="class_g_l_s_l_shader.html#a24245090ce60e6e1c07a3187238352b3">GLSLShader::setFloat</a></div><div class="ttdeci">void setFloat(glm::uint32 loc, float val)</div><div class="ttdoc">Modifica una variable del shader de tipo coma flotante a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00082">GLSLShader.cpp:82</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a96553c7f3c81589719db4ca5ac7288c5"><div class="ttname"><a href="class_g_l_s_l_shader.html#a96553c7f3c81589719db4ca5ac7288c5">GLSLShader::getError</a></div><div class="ttdeci">const char * getError()</div><div class="ttdoc">Get the Error object.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00050">GLSLShader.cpp:50</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a44e23c0a2a8f660515f4b538b10e19d9"><div class="ttname"><a href="class_g_l_s_l_shader.html#a44e23c0a2a8f660515f4b538b10e19d9">GLSLShader::setMatrix</a></div><div class="ttdeci">void setMatrix(glm::uint32 loc, const glm::mat4 &amp;matrix)</div><div class="ttdoc">Modifica una variable del shader de tipo matriz de tamaño 4x4 a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00106">GLSLShader.cpp:106</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_adc3bff405da837b64a8196e09c17058a"><div class="ttname"><a href="class_g_l_s_l_shader.html#adc3bff405da837b64a8196e09c17058a">GLSLShader::setupAttribs</a></div><div class="ttdeci">void setupAttribs()</div><div class="ttdoc">Activa la escritura de los atributos del shader.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00060">GLSLShader.cpp:60</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a807c4cd89d6d6c026725325032328888"><div class="ttname"><a href="class_g_l_s_l_shader.html#a807c4cd89d6d6c026725325032328888">GLSLShader::setVec4</a></div><div class="ttdeci">void setVec4(glm::uint32 loc, const glm::vec4 &amp;vec)</div><div class="ttdoc">Modifica una variable del shader de tipo vector de tamaño 4 a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00098">GLSLShader.cpp:98</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_aefe8b325deeb9b3560fa05ac9094dfa5"><div class="ttname"><a href="class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5">GLSLShader::getLocation</a></div><div class="ttdeci">glm::uint32 getLocation(std::string name)</div><div class="ttdoc">Obtiene la localización de una variable específica del shader por su nombre.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00069">GLSLShader.cpp:69</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

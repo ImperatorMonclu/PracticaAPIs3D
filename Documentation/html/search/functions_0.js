@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['getid_17',['getId',['../class_g_l_s_l_shader.html#a979d92e8decd688500cdf58e7b3e1146',1,'GLSLShader']]],
-  ['getlocation_18',['getLocation',['../class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5',1,'GLSLShader']]],
-  ['glslshader_19',['GLSLShader',['../class_g_l_s_l_shader.html#ade6e805d01f4af5718387d12b4ddc23b',1,'GLSLShader']]]
+  ['addtriangleidx_78',['addTriangleIdx',['../class_mesh3_d.html#a6626c5f449d14e4271ceb4168dcbaf61',1,'Mesh3D']]],
+  ['addvertex_79',['addVertex',['../class_mesh3_d.html#ac53919f91af2ccc7aa136568383ef271',1,'Mesh3D']]]
 ];

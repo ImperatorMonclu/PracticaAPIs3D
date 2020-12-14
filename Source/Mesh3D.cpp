@@ -1,11 +1,21 @@
+/**
+ * @file Mesh3D.cpp
+ * @author ImperatorMonclu (maurogarciamonclu@gmail.com)
+ * @brief 
+ * @version 0.1.0
+ * @date 14-12-2020
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 #include "Mesh3D.h"
-#include "GLSLShader.h"
 #include "ProgramManager.h"
 
 Mesh3D::Mesh3D()
 {
-    meshID = ProgramManager::getInstance().getMeshID();
-    colorRGB = glm::vec3(1.0f);
+    meshID = ProgramManager::getInstance().getMeshID(); /**< Obtiene el identificador por una @link staticVariables variable estática@endlink */
+    colorRGB = glm::vec3(1.0f);                         /**< Se inicializa a color blanco */
+
     vVertList = new std::vector<struct vertex_t>();
     vIdxList = new std::vector<glm::int32>();
 }

@@ -1,68 +1,45 @@
+/**
+ * @file GLSLShader.cpp
+ * @author ImperatorMonclu (maurogarciamonclu@gmail.com)
+ * @brief 
+ * @version 0.1.0
+ * @date 14-12-2020
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 #include "GLSLShader.h"
-#include <GL/glew.h>
-#include "Vertex.h"
 #include <iostream>
-
-GLSLShader::~GLSLShader()
-{
-	if (programID != -1)
-	{
-		glDeleteProgram(programID);
-	}
-}
+#include <fstream>
+#include "glm/gtc/type_ptr.hpp"
 
 GLSLShader::GLSLShader(std::string vertexPrg, std::string fragPrg)
 {
-	int param = GL_FALSE;
-
-	uint32_t vertexPrgID = glCreateShader(GL_VERTEX_SHADER);
-	const char *vertexPrgC = vertexPrg.c_str();
-	glShaderSource(vertexPrgID, 1, &vertexPrgC, nullptr);
-	glCompileShader(vertexPrgID);
-
-	glGetShaderiv(vertexPrgID, GL_COMPILE_STATUS, &param);
-	if (param == GL_FALSE)
-	{
-		glGetShaderInfoLog(vertexPrgID, sizeof(error), nullptr, error);
-		std::cout << error << std::endl;
-		return;
-	}
-
-	uint32_t fragPrgID = glCreateShader(GL_FRAGMENT_SHADER);
-	const char *fragPrgC = fragPrg.c_str();
-	glShaderSource(fragPrgID, 1, &fragPrgC, nullptr);
-	glCompileShader(fragPrgID);
-
-	glGetShaderiv(fragPrgID, GL_COMPILE_STATUS, &param);
-	if (param == GL_FALSE)
-	{
-		glGetShaderInfoLog(fragPrgID, sizeof(error), nullptr, error);
-		std::cout << error << std::endl;
-		glDeleteShader(vertexPrgID);
-		return;
-	}
+	error = new char[1024];
 
 	programID = glCreateProgram();
+	int vertexPrgID = compileShader(readFile(vertexPrg), GL_VERTEX_SHADER);
+	int fragPrgID = compileShader(readFile(fragPrg), GL_FRAGMENT_SHADER);
+
 	glAttachShader(programID, vertexPrgID);
 	glAttachShader(programID, fragPrgID);
 	glLinkProgram(programID);
 
-	glGetProgramiv(programID, GL_LINK_STATUS, &param);
-	if (param == GL_FALSE)
+	GLint success = 1;
+	glGetProgramiv(programID, GL_LINK_STATUS, &success);
+	if (!success)
 	{
 		glGetProgramInfoLog(programID, sizeof(error), nullptr, error);
-		std::cout << error << std::endl;
-		glDeleteShader(vertexPrgID);
-		glDeleteShader(fragPrgID);
+		std::cout << "Error en programa al linkar\n"
+				  << error << "\n";
 		return;
 	}
 
 	glDeleteShader(vertexPrgID);
 	glDeleteShader(fragPrgID);
 
-	vShaderAttribs["vPos"] = glGetAttribLocation(programID, "vPos");
 	vShaderAttribs["mvpMatrix"] = glGetAttribLocation(programID, "mvpMatrix");
-	vShaderAttribs["fColor"] = glGetAttribLocation(programID, "fColor");
+	vShaderAttribs["vertexPosition"] = glGetAttribLocation(programID, "vertexPosition");
 }
 
 uint32_t GLSLShader::getId()
@@ -82,20 +59,10 @@ void GLSLShader::use()
 
 void GLSLShader::setupAttribs()
 {
-	if (vShaderAttribs["vPos"] != -1)
+	if (vShaderAttribs["vertexPosition"] != -1)
 	{
-		glEnableVertexAttribArray(vShaderAttribs["vPos"]);
-		glVertexAttribPointer(vShaderAttribs["vPos"], 3, GL_FLOAT, false, sizeof(vertex_t), 0);
-	}
-	if (vShaderAttribs["mvpMatrix"] != -1)
-	{
-		glEnableVertexAttribArray(vShaderAttribs["mvpMatrix"]);
-		glVertexAttribPointer(vShaderAttribs["mvpMatrix"], 3, GL_FLOAT, false, sizeof(glm::mat4), 0);
-	}
-	if (vShaderAttribs["fColor"] != -1)
-	{
-		glEnableVertexAttribArray(vShaderAttribs["fColor"]);
-		glVertexAttribPointer(vShaderAttribs["fColor"], 3, GL_FLOAT, false, sizeof(glm::vec3), 0);
+		glEnableVertexAttribArray(vShaderAttribs["vertexPosition"]);
+		glVertexAttribPointer(vShaderAttribs["vertexPosition"], 4, GL_FLOAT, false, 0, nullptr);
 	}
 }
 
@@ -140,6 +107,48 @@ void GLSLShader::setMatrix(glm::uint32 loc, const glm::mat4 &matrix)
 {
 	if (loc != -1)
 	{
-		glUniformMatrix4fv(loc, 1, GL_FALSE, &matrix[0][0]);
+		glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(matrix));
 	}
+}
+
+const char *GLSLShader::readFile(std::string filename)
+{
+	std::ifstream::pos_type size;
+	char *memblock;
+	std::string text;
+
+	std::ifstream file(filename, std::ios::in | std::ios::binary | std::ios::ate);
+	if (file.is_open())
+	{
+		size = file.tellg();
+		memblock = new char[1 + size];
+		file.seekg(0, std::ios::beg);
+		file.read(memblock, size);
+		file.close();
+		memblock[size] = '\0';
+		std::cout << "File " << filename << " loaded" << std::endl;
+		text.assign(memblock);
+	}
+	else
+	{
+		std::cout << "Unable to open file " << filename << std::endl;
+		exit(1);
+	}
+	return memblock;
+}
+
+int GLSLShader::compileShader(const char *code, GLenum shaderType)
+{
+	int shaderID = glCreateShader(shaderType);
+	glShaderSource(shaderID, 1, &code, nullptr);
+	glCompileShader(shaderID);
+	GLint success = 1;
+	glGetShaderiv(shaderID, GL_COMPILE_STATUS, &success);
+	if (!success)
+	{
+		glGetShaderInfoLog(shaderID, 1024, nullptr, error);
+		std::cout << "Error en shader\n"
+				  << error << "\n";
+	}
+	return shaderID;
 }

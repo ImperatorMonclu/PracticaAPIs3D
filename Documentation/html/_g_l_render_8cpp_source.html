@@ -72,42 +72,72 @@ $(function() {
 <div class="title">GLRender.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;GLRender.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;GLRender::GLRender()</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    vMeshIds = {};</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> GLRender::setupObj(<a class="code" href="class_object3_d.html">Object3D</a> *obj)</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    glMeshAttribs_t meshAttribs;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    glGenBuffers(2, &amp;meshAttribs.bufferID);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::vector&lt;struct vertex_t&gt; *vertexes = obj-&gt;getMesh()-&gt;getVertList();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, meshAttribs.vertexArrayID);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    glBufferData(GL_ARRAY_BUFFER, vertexes-&gt;size() * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structvertex__t.html">vertex_t</a>), vertexes-&gt;data(), GL_STATIC_DRAW);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;glm::int32&gt; *indexes = obj-&gt;getMesh()-&gt;getTriangleIdxList();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, meshAttribs.indexArrayID);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes-&gt;size() * <span class="keyword">sizeof</span>(glm::int32), indexes-&gt;data(), GL_STATIC_DRAW);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    vMeshIds.insert(std::pair&lt;glm::uint32, glMeshAttribs_t&gt;(obj-&gt;getMesh()-&gt;getMeshID(), meshAttribs));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> GLRender::drawObject(<a class="code" href="class_object3_d.html">Object3D</a> *obj)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, vMeshIds[obj-&gt;getMesh()-&gt;getMeshID()].vertexArrayID);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vMeshIds[obj-&gt;getMesh()-&gt;getMeshID()].indexArrayID);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    obj-&gt;getGLSLShader()-&gt;setupAttribs();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    glDrawElements(GL_TRIANGLES, obj-&gt;getMesh()-&gt;getTriangleIdxList()-&gt;size(), GL_UNSIGNED_SHORT, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<a href="_g_l_render_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_g_l_render_8h.html">GLRender.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;glm/gtc/matrix_transform.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;glm/gtx/transform.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_g_l_render.html#a497e953ceef0aa63790bac12da6a1369">   15</a></span>&#160;<a class="code" href="class_g_l_render.html#a497e953ceef0aa63790bac12da6a1369">GLRender::GLRender</a>()</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_g_l_render.html#aa78638697ded3a0958c0118fe141f134">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_g_l_render.html#aa78638697ded3a0958c0118fe141f134">GLRender::setupObj</a>(<a class="code" href="class_object3_d.html">Object3D</a> *obj)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    glMeshAttribs_t meshAttribs;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    glGenVertexArrays(1, &amp;meshAttribs.bufferID);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    glGenBuffers(1, &amp;meshAttribs.vertexArrayID);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    glGenBuffers(1, &amp;meshAttribs.indexArrayID);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    glBindVertexArray(meshAttribs.bufferID);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::vector&lt;struct vertex_t&gt; *vertexes = obj-&gt;<a class="code" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">getMesh</a>()-&gt;<a class="code" href="class_mesh3_d.html#a8ce94b8cf1d87f62d24794d7385f09e8">getVertList</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, meshAttribs.vertexArrayID);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    glBufferData(GL_ARRAY_BUFFER, vertexes-&gt;size() * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structvertex__t.html">vertex_t</a>), vertexes-&gt;data(), GL_STATIC_DRAW);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector&lt;glm::int32&gt; *indexes = obj-&gt;<a class="code" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">getMesh</a>()-&gt;<a class="code" href="class_mesh3_d.html#afd8174060b8b408ac00783d84258ce34">getTriangleIdxList</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, meshAttribs.indexArrayID);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes-&gt;size() * <span class="keyword">sizeof</span>(glm::int32), indexes-&gt;data(), GL_STATIC_DRAW);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    vMeshIds.insert({obj-&gt;<a class="code" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">getMesh</a>()-&gt;getMeshID(), meshAttribs});</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_g_l_render.html#aef963bfaf57a01bc6f06d77f37e77477">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_g_l_render.html#aef963bfaf57a01bc6f06d77f37e77477">GLRender::drawObject</a>(<a class="code" href="class_object3_d.html">Object3D</a> *obj)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    glm::int32 meshID = obj-&gt;<a class="code" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">getMesh</a>()-&gt;<a class="code" href="class_mesh3_d.html#ae0265399d0ef6ed823e0a9d498876f2f">getMeshID</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    glBindVertexArray(vMeshIds[meshID].bufferID);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, vMeshIds[meshID].vertexArrayID);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vMeshIds[meshID].indexArrayID);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a> *shader = obj-&gt;<a class="code" href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">getGLSLShader</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    shader-&gt;<a class="code" href="class_g_l_s_l_shader.html#a9ac80ec08b736dc5dc89e68f31e9bd8d">use</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    shader-&gt;<a class="code" href="class_g_l_s_l_shader.html#adc3bff405da837b64a8196e09c17058a">setupAttribs</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    shader-&gt;<a class="code" href="class_g_l_s_l_shader.html#a44e23c0a2a8f660515f4b538b10e19d9">setMatrix</a>(shader-&gt;<a class="code" href="class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5">getLocation</a>(<span class="stringliteral">&quot;mvpMatrix&quot;</span>), glm::perspective(45.0f, 1280.0f / 720.0f, 0.1f, 100.0f) * glm::lookAt(glm::vec3(0.0f, 0.0f, 6.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f)) * glm::mat4(1.0f) * obj-&gt;<a class="code" href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">getModelMtx</a>());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructvertex__t_html"><div class="ttname"><a href="structvertex__t.html">vertex_t</a></div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00004">Vertex.h:5</a></div></div>
-<div class="ttc" id="aclass_object3_d_html"><div class="ttname"><a href="class_object3_d.html">Object3D</a></div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8h_source.html#l00005">Object3D.h:6</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a03aa0541a95e6c09d5a0b69554fd7153"><div class="ttname"><a href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">Object3D::getGLSLShader</a></div><div class="ttdeci">GLSLShader * getGLSLShader()</div><div class="ttdoc">Get the GLSL Shader object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00039">Object3D.cpp:39</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_a8ce94b8cf1d87f62d24794d7385f09e8"><div class="ttname"><a href="class_mesh3_d.html#a8ce94b8cf1d87f62d24794d7385f09e8">Mesh3D::getVertList</a></div><div class="ttdeci">std::vector&lt; struct vertex_t &gt; * getVertList()</div><div class="ttdoc">Get the Vert List object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00040">Mesh3D.cpp:40</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a9ac80ec08b736dc5dc89e68f31e9bd8d"><div class="ttname"><a href="class_g_l_s_l_shader.html#a9ac80ec08b736dc5dc89e68f31e9bd8d">GLSLShader::use</a></div><div class="ttdeci">void use()</div><div class="ttdoc">Activa el programa.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00055">GLSLShader.cpp:55</a></div></div>
+<div class="ttc" id="aclass_g_l_render_html_aef963bfaf57a01bc6f06d77f37e77477"><div class="ttname"><a href="class_g_l_render.html#aef963bfaf57a01bc6f06d77f37e77477">GLRender::drawObject</a></div><div class="ttdeci">void drawObject(Object3D *obj)</div><div class="ttdoc">Dibuja por pantalla un objeto.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_render_8cpp_source.html#l00040">GLRender.cpp:40</a></div></div>
+<div class="ttc" id="aclass_g_l_render_html_aa78638697ded3a0958c0118fe141f134"><div class="ttname"><a href="class_g_l_render.html#aa78638697ded3a0958c0118fe141f134">GLRender::setupObj</a></div><div class="ttdeci">void setupObj(Object3D *obj)</div><div class="ttdoc">Carga la malla 3D de un objeto en memoria.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_render_8cpp_source.html#l00019">GLRender.cpp:19</a></div></div>
+<div class="ttc" id="aclass_g_l_render_html_a497e953ceef0aa63790bac12da6a1369"><div class="ttname"><a href="class_g_l_render.html#a497e953ceef0aa63790bac12da6a1369">GLRender::GLRender</a></div><div class="ttdeci">GLRender()</div><div class="ttdoc">Construct a new GL Render object.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_render_8cpp_source.html#l00015">GLRender.cpp:15</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html"><div class="ttname"><a href="class_g_l_s_l_shader.html">GLSLShader</a></div><div class="ttdoc">Shader de GLSL. Permite modificar las variables uniformes del shader.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8h_source.html#l00022">GLSLShader.h:23</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_afd8174060b8b408ac00783d84258ce34"><div class="ttname"><a href="class_mesh3_d.html#afd8174060b8b408ac00783d84258ce34">Mesh3D::getTriangleIdxList</a></div><div class="ttdeci">std::vector&lt; glm::int32 &gt; * getTriangleIdxList()</div><div class="ttdoc">Get the Triangle Idx List object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00045">Mesh3D.cpp:45</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html_ae0265399d0ef6ed823e0a9d498876f2f"><div class="ttname"><a href="class_mesh3_d.html#ae0265399d0ef6ed823e0a9d498876f2f">Mesh3D::getMeshID</a></div><div class="ttdeci">glm::uint32 getMeshID()</div><div class="ttdoc">Get the Mesh ID object.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8cpp_source.html#l00023">Mesh3D.cpp:23</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a54b1ffa3bba271bef270e1e15b29cf29"><div class="ttname"><a href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">Object3D::getModelMtx</a></div><div class="ttdeci">glm::mat4x4 getModelMtx()</div><div class="ttdoc">Get the Model Mtx object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00049">Object3D.cpp:49</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_a44e23c0a2a8f660515f4b538b10e19d9"><div class="ttname"><a href="class_g_l_s_l_shader.html#a44e23c0a2a8f660515f4b538b10e19d9">GLSLShader::setMatrix</a></div><div class="ttdeci">void setMatrix(glm::uint32 loc, const glm::mat4 &amp;matrix)</div><div class="ttdoc">Modifica una variable del shader de tipo matriz de tamaño 4x4 a partir de su localización.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00106">GLSLShader.cpp:106</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_adc3bff405da837b64a8196e09c17058a"><div class="ttname"><a href="class_g_l_s_l_shader.html#adc3bff405da837b64a8196e09c17058a">GLSLShader::setupAttribs</a></div><div class="ttdeci">void setupAttribs()</div><div class="ttdoc">Activa la escritura de los atributos del shader.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00060">GLSLShader.cpp:60</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_af1cecd4eaae8e0a0b8742f525be25711"><div class="ttname"><a href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">Object3D::getMesh</a></div><div class="ttdeci">Mesh3D * getMesh()</div><div class="ttdoc">Get the Mesh object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00029">Object3D.cpp:29</a></div></div>
+<div class="ttc" id="astructvertex__t_html"><div class="ttname"><a href="structvertex__t.html">vertex_t</a></div><div class="ttdoc">Información de un vértice.</div><div class="ttdef"><b>Definition:</b> <a href="_vertex_8h_source.html#l00018">Vertex.h:19</a></div></div>
+<div class="ttc" id="a_g_l_render_8h_html"><div class="ttname"><a href="_g_l_render_8h.html">GLRender.h</a></div></div>
+<div class="ttc" id="aclass_object3_d_html"><div class="ttname"><a href="class_object3_d.html">Object3D</a></div><div class="ttdoc">Objeto abstracto básico renderizable.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8h_source.html#l00019">Object3D.h:20</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html_aefe8b325deeb9b3560fa05ac9094dfa5"><div class="ttname"><a href="class_g_l_s_l_shader.html#aefe8b325deeb9b3560fa05ac9094dfa5">GLSLShader::getLocation</a></div><div class="ttdeci">glm::uint32 getLocation(std::string name)</div><div class="ttdoc">Obtiene la localización de una variable específica del shader por su nombre.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8cpp_source.html#l00069">GLSLShader.cpp:69</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

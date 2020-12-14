@@ -1,37 +1,41 @@
 \hypertarget{class_g_l_s_l_shader}{}\doxysection{G\+L\+S\+L\+Shader Class Reference}
 \label{class_g_l_s_l_shader}\index{GLSLShader@{GLSLShader}}
+
+
+Shader de G\+L\+SL. Permite modificar las variables uniformes del shader.  
+
+
+
+
+{\ttfamily \#include $<$G\+L\+S\+L\+Shader.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_g_l_s_l_shader_ade6e805d01f4af5718387d12b4ddc23b}{G\+L\+S\+L\+Shader}} (std\+::string vertex\+Prg, std\+::string frag\+Prg)
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} object. \end{DoxyCompactList}\item 
-uint32\+\_\+t \mbox{\hyperlink{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}{get\+Id}} ()
+glm\+::uint32 \mbox{\hyperlink{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}{get\+Id}} ()
 \begin{DoxyCompactList}\small\item\em Get the Id object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}\label{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}} 
-const char $\ast$ {\bfseries get\+Error} ()
-\item 
+const char $\ast$ \mbox{\hyperlink{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}{get\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Get the Error object. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_l_s_l_shader_a9ac80ec08b736dc5dc89e68f31e9bd8d}\label{class_g_l_s_l_shader_a9ac80ec08b736dc5dc89e68f31e9bd8d}} 
-void {\bfseries use} ()
-\item 
+void \mbox{\hyperlink{class_g_l_s_l_shader_a9ac80ec08b736dc5dc89e68f31e9bd8d}{use}} ()
+\begin{DoxyCompactList}\small\item\em Activa el programa. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_g_l_s_l_shader_adc3bff405da837b64a8196e09c17058a}\label{class_g_l_s_l_shader_adc3bff405da837b64a8196e09c17058a}} 
-void {\bfseries setup\+Attribs} ()
-\item 
+void \mbox{\hyperlink{class_g_l_s_l_shader_adc3bff405da837b64a8196e09c17058a}{setup\+Attribs}} ()
+\begin{DoxyCompactList}\small\item\em Activa la escritura de los atributos del shader. \end{DoxyCompactList}\item 
 glm\+::uint32 \mbox{\hyperlink{class_g_l_s_l_shader_aefe8b325deeb9b3560fa05ac9094dfa5}{get\+Location}} (std\+::string name)
 \begin{DoxyCompactList}\small\item\em Obtiene la localización de una variable específica del shader por su nombre. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_g_l_s_l_shader_a1e0b42282e9323371dd538a0a9cc63a6}{set\+Int}} (glm\+::uint32 loc, int val)
 \begin{DoxyCompactList}\small\item\em Modifica una variable del shader de tipo entero a partir de su localización. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}\label{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}} 
-void {\bfseries set\+Float} (glm\+::uint32 loc, float val)
-\item 
-\mbox{\Hypertarget{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}\label{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}} 
-void {\bfseries set\+Vec3} (glm\+::uint32 loc, const glm\+::vec3 \&vec)
-\item 
-\mbox{\Hypertarget{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}\label{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}} 
-void {\bfseries set\+Vec4} (glm\+::uint32 loc, const glm\+::vec4 \&vec)
-\item 
-\mbox{\Hypertarget{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}\label{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}} 
-void {\bfseries set\+Matrix} (glm\+::uint32 loc, const glm\+::mat4 \&matrix)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}{set\+Float}} (glm\+::uint32 loc, float val)
+\begin{DoxyCompactList}\small\item\em Modifica una variable del shader de tipo coma flotante a partir de su localización. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}{set\+Vec3}} (glm\+::uint32 loc, const glm\+::vec3 \&vec)
+\begin{DoxyCompactList}\small\item\em Modifica una variable del shader de tipo vector de tamaño 3 a partir de su localización. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}{set\+Vec4}} (glm\+::uint32 loc, const glm\+::vec4 \&vec)
+\begin{DoxyCompactList}\small\item\em Modifica una variable del shader de tipo vector de tamaño 4 a partir de su localización. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}{set\+Matrix}} (glm\+::uint32 loc, const glm\+::mat4 \&matrix)
+\begin{DoxyCompactList}\small\item\em Modifica una variable del shader de tipo matriz de tamaño 4x4 a partir de su localización. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,9 +48,9 @@ std\+::map$<$ std\+::string, glm\+::uint32 $>$ {\bfseries v\+Shader\+Attribs}
 
 
 \doxysubsection{Detailed Description}
+Shader de G\+L\+SL. Permite modificar las variables uniformes del shader. 
 
-
-Definition at line 6 of file G\+L\+S\+L\+Shader.\+h.
+Definition at line 22 of file G\+L\+S\+L\+Shader.\+h.
 
 
 
@@ -63,18 +67,35 @@ Construct a new \mbox{\hyperlink{class_g_l_s_l_shader}{G\+L\+S\+L\+Shader}} obje
 
 
 \begin{DoxyParams}{Parameters}
-{\em vertex\+Prg} & \\
+{\em vertex\+Prg} & dirección del fichero para el shader de vértices \\
 \hline
-{\em frag\+Prg} & \\
+{\em frag\+Prg} & dirección del fichero para el shader de fragmentos \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 14 of file G\+L\+S\+L\+Shader.\+cpp.
+Definition at line 16 of file G\+L\+S\+L\+Shader.\+cpp.
 
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}\label{class_g_l_s_l_shader_a96553c7f3c81589719db4ca5ac7288c5}} 
+\index{GLSLShader@{GLSLShader}!getError@{getError}}
+\index{getError@{getError}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily const char $\ast$ G\+L\+S\+L\+Shader\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Error object. 
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file G\+L\+S\+L\+Shader.\+cpp.
+
 \mbox{\Hypertarget{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}\label{class_g_l_s_l_shader_a979d92e8decd688500cdf58e7b3e1146}} 
 \index{GLSLShader@{GLSLShader}!getId@{getId}}
 \index{getId@{getId}!GLSLShader@{GLSLShader}}
@@ -86,11 +107,11 @@ Definition at line 14 of file G\+L\+S\+L\+Shader.\+cpp.
 Get the Id object. 
 
 \begin{DoxyReturn}{Returns}
-uint32\+\_\+t 
+glm\+::uint32 identificador del programa 
 \end{DoxyReturn}
 
 
-Definition at line 68 of file G\+L\+S\+L\+Shader.\+cpp.
+Definition at line 45 of file G\+L\+S\+L\+Shader.\+cpp.
 
 \mbox{\Hypertarget{class_g_l_s_l_shader_aefe8b325deeb9b3560fa05ac9094dfa5}\label{class_g_l_s_l_shader_aefe8b325deeb9b3560fa05ac9094dfa5}} 
 \index{GLSLShader@{GLSLShader}!getLocation@{getLocation}}
@@ -104,15 +125,36 @@ Obtiene la localización de una variable específica del shader por su nombre.
 
 
 \begin{DoxyParams}{Parameters}
-{\em name} & nombre de la variable en el shader por una cadena de texto \\
+{\em name} & nombre de la variable en el shader \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-glm\+::uint32 posición de la variable en el shader por un entero 
+glm\+::uint32 posición de la variable en el shader 
 \end{DoxyReturn}
 
 
-Definition at line 102 of file G\+L\+S\+L\+Shader.\+cpp.
+Definition at line 69 of file G\+L\+S\+L\+Shader.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}\label{class_g_l_s_l_shader_a24245090ce60e6e1c07a3187238352b3}} 
+\index{GLSLShader@{GLSLShader}!setFloat@{setFloat}}
+\index{setFloat@{setFloat}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{setFloat()}{setFloat()}}
+{\footnotesize\ttfamily void G\+L\+S\+L\+Shader\+::set\+Float (\begin{DoxyParamCaption}\item[{glm\+::uint32}]{loc,  }\item[{float}]{val }\end{DoxyParamCaption})}
+
+
+
+Modifica una variable del shader de tipo coma flotante a partir de su localización. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & posición de la variable en el shader \\
+\hline
+{\em val} & valor de la variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file G\+L\+S\+L\+Shader.\+cpp.
 
 \mbox{\Hypertarget{class_g_l_s_l_shader_a1e0b42282e9323371dd538a0a9cc63a6}\label{class_g_l_s_l_shader_a1e0b42282e9323371dd538a0a9cc63a6}} 
 \index{GLSLShader@{GLSLShader}!setInt@{setInt}}
@@ -126,18 +168,81 @@ Modifica una variable del shader de tipo entero a partir de su localización.
 
 
 \begin{DoxyParams}{Parameters}
-{\em loc} & \\
+{\em loc} & posición de la variable en el shader \\
 \hline
-{\em val} & \\
+{\em val} & valor de la variable \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 107 of file G\+L\+S\+L\+Shader.\+cpp.
+Definition at line 74 of file G\+L\+S\+L\+Shader.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}\label{class_g_l_s_l_shader_a44e23c0a2a8f660515f4b538b10e19d9}} 
+\index{GLSLShader@{GLSLShader}!setMatrix@{setMatrix}}
+\index{setMatrix@{setMatrix}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{setMatrix()}{setMatrix()}}
+{\footnotesize\ttfamily void G\+L\+S\+L\+Shader\+::set\+Matrix (\begin{DoxyParamCaption}\item[{glm\+::uint32}]{loc,  }\item[{const glm\+::mat4 \&}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Modifica una variable del shader de tipo matriz de tamaño 4x4 a partir de su localización. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & posición de la variable en el shader \\
+\hline
+{\em matrix} & valor de la matriz \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file G\+L\+S\+L\+Shader.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}\label{class_g_l_s_l_shader_adb91e9d9d8c66d70c5aff854c56adf49}} 
+\index{GLSLShader@{GLSLShader}!setVec3@{setVec3}}
+\index{setVec3@{setVec3}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{setVec3()}{setVec3()}}
+{\footnotesize\ttfamily void G\+L\+S\+L\+Shader\+::set\+Vec3 (\begin{DoxyParamCaption}\item[{glm\+::uint32}]{loc,  }\item[{const glm\+::vec3 \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+Modifica una variable del shader de tipo vector de tamaño 3 a partir de su localización. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & posición de la variable en el shader \\
+\hline
+{\em vec} & valor del vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file G\+L\+S\+L\+Shader.\+cpp.
+
+\mbox{\Hypertarget{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}\label{class_g_l_s_l_shader_a807c4cd89d6d6c026725325032328888}} 
+\index{GLSLShader@{GLSLShader}!setVec4@{setVec4}}
+\index{setVec4@{setVec4}!GLSLShader@{GLSLShader}}
+\doxysubsubsection{\texorpdfstring{setVec4()}{setVec4()}}
+{\footnotesize\ttfamily void G\+L\+S\+L\+Shader\+::set\+Vec4 (\begin{DoxyParamCaption}\item[{glm\+::uint32}]{loc,  }\item[{const glm\+::vec4 \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+Modifica una variable del shader de tipo vector de tamaño 4 a partir de su localización. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & posición de la variable en el shader \\
+\hline
+{\em vec} & valor del vector \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file G\+L\+S\+L\+Shader.\+cpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Source/G\+L\+S\+L\+Shader.\+h\item 
-Source/G\+L\+S\+L\+Shader.\+cpp\end{DoxyCompactItemize}
+Source/\mbox{\hyperlink{_g_l_s_l_shader_8h}{G\+L\+S\+L\+Shader.\+h}}\item 
+Source/\mbox{\hyperlink{_g_l_s_l_shader_8cpp}{G\+L\+S\+L\+Shader.\+cpp}}\end{DoxyCompactItemize}

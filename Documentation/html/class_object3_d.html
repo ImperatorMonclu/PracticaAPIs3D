@@ -71,62 +71,347 @@ $(function() {
 <div class="title">Object3D Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Objeto abstracto básico renderizable.  
+ <a href="class_object3_d.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_object3_d_8h_source.html">Object3D.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Object3D:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_object3_d.png" usemap="#Object3D_map" alt=""/>
   <map id="Object3D_map" name="Object3D_map">
-<area href="class_triangle_rot.html" alt="TriangleRot" shape="rect" coords="0,56,76,80"/>
+<area href="class_triangle_rot.html" title="Triángulo en rotación." alt="TriangleRot" shape="rect" coords="0,56,76,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae3a1b17fb43ab59f5cf7b0ee21b9120b"><td class="memItemLeft" align="right" valign="top"><a id="ae3a1b17fb43ab59f5cf7b0ee21b9120b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#ae3a1b17fb43ab59f5cf7b0ee21b9120b">Object3D</a> ()</td></tr>
+<tr class="memdesc:ae3a1b17fb43ab59f5cf7b0ee21b9120b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Object 3D object. <br /></td></tr>
+<tr class="separator:ae3a1b17fb43ab59f5cf7b0ee21b9120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe19409a8c45dd68a42a1580175db121"><td class="memItemLeft" align="right" valign="top"><a id="afe19409a8c45dd68a42a1580175db121"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>step</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#afe19409a8c45dd68a42a1580175db121">step</a> ()=0</td></tr>
+<tr class="memdesc:afe19409a8c45dd68a42a1580175db121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acción del objeto que se construye en clases hijas. <br /></td></tr>
 <tr class="separator:afe19409a8c45dd68a42a1580175db121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b7f38537bf7a73bb0feb6cc7300f031"><td class="memItemLeft" align="right" valign="top"><a id="a4b7f38537bf7a73bb0feb6cc7300f031"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMesh</b> (<a class="el" href="class_mesh3_d.html">Mesh3D</a> *mesh)</td></tr>
+<tr class="memitem:a4b7f38537bf7a73bb0feb6cc7300f031"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">setMesh</a> (<a class="el" href="class_mesh3_d.html">Mesh3D</a> *mesh)</td></tr>
+<tr class="memdesc:a4b7f38537bf7a73bb0feb6cc7300f031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Mesh object.  <a href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">More...</a><br /></td></tr>
 <tr class="separator:a4b7f38537bf7a73bb0feb6cc7300f031"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1cecd4eaae8e0a0b8742f525be25711"><td class="memItemLeft" align="right" valign="top"><a id="af1cecd4eaae8e0a0b8742f525be25711"></a>
-<a class="el" href="class_mesh3_d.html">Mesh3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getMesh</b> ()</td></tr>
+<tr class="memitem:af1cecd4eaae8e0a0b8742f525be25711"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_mesh3_d.html">Mesh3D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">getMesh</a> ()</td></tr>
+<tr class="memdesc:af1cecd4eaae8e0a0b8742f525be25711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Mesh object.  <a href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">More...</a><br /></td></tr>
 <tr class="separator:af1cecd4eaae8e0a0b8742f525be25711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa48845017f598d2d926b7f87bdc0b5ea"><td class="memItemLeft" align="right" valign="top"><a id="aa48845017f598d2d926b7f87bdc0b5ea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setGLSLShader</b> (<a class="el" href="class_g_l_s_l_shader.html">GLSLShader</a> *shader)</td></tr>
+<tr class="memitem:aa48845017f598d2d926b7f87bdc0b5ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#aa48845017f598d2d926b7f87bdc0b5ea">setGLSLShader</a> (<a class="el" href="class_g_l_s_l_shader.html">GLSLShader</a> *shader)</td></tr>
+<tr class="memdesc:aa48845017f598d2d926b7f87bdc0b5ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the GLSL Shader object.  <a href="class_object3_d.html#aa48845017f598d2d926b7f87bdc0b5ea">More...</a><br /></td></tr>
 <tr class="separator:aa48845017f598d2d926b7f87bdc0b5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03aa0541a95e6c09d5a0b69554fd7153"><td class="memItemLeft" align="right" valign="top"><a id="a03aa0541a95e6c09d5a0b69554fd7153"></a>
-<a class="el" href="class_g_l_s_l_shader.html">GLSLShader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getGLSLShader</b> ()</td></tr>
+<tr class="memitem:a03aa0541a95e6c09d5a0b69554fd7153"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_g_l_s_l_shader.html">GLSLShader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">getGLSLShader</a> ()</td></tr>
+<tr class="memdesc:a03aa0541a95e6c09d5a0b69554fd7153"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the GLSL Shader object.  <a href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">More...</a><br /></td></tr>
 <tr class="separator:a03aa0541a95e6c09d5a0b69554fd7153"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ddfd89da7a07375b44c637b5710048b"><td class="memItemLeft" align="right" valign="top"><a id="a4ddfd89da7a07375b44c637b5710048b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>computeModelMtx</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#a4ddfd89da7a07375b44c637b5710048b">computeModelMtx</a> ()</td></tr>
+<tr class="memdesc:a4ddfd89da7a07375b44c637b5710048b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la matriz modelo del objeto 3D. <br /></td></tr>
 <tr class="separator:a4ddfd89da7a07375b44c637b5710048b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b1ffa3bba271bef270e1e15b29cf29"><td class="memItemLeft" align="right" valign="top"><a id="a54b1ffa3bba271bef270e1e15b29cf29"></a>
-glm::mat4x4&#160;</td><td class="memItemRight" valign="bottom"><b>getModelMtx</b> ()</td></tr>
+<tr class="memitem:a54b1ffa3bba271bef270e1e15b29cf29"><td class="memItemLeft" align="right" valign="top">glm::mat4x4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">getModelMtx</a> ()</td></tr>
+<tr class="memdesc:a54b1ffa3bba271bef270e1e15b29cf29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Model Mtx object.  <a href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">More...</a><br /></td></tr>
 <tr class="separator:a54b1ffa3bba271bef270e1e15b29cf29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0855a09269696bdf9e24bacc1c5f4d8"><td class="memItemLeft" align="right" valign="top"><a id="af0855a09269696bdf9e24bacc1c5f4d8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setPos</b> (glm::vec3 pos)</td></tr>
+<tr class="memitem:af0855a09269696bdf9e24bacc1c5f4d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#af0855a09269696bdf9e24bacc1c5f4d8">setPos</a> (glm::vec3 pos)</td></tr>
+<tr class="memdesc:af0855a09269696bdf9e24bacc1c5f4d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Pos object.  <a href="class_object3_d.html#af0855a09269696bdf9e24bacc1c5f4d8">More...</a><br /></td></tr>
 <tr class="separator:af0855a09269696bdf9e24bacc1c5f4d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab89464caa0aa1ba45e3d864318ffaf0e"><td class="memItemLeft" align="right" valign="top"><a id="ab89464caa0aa1ba45e3d864318ffaf0e"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getPos</b> ()</td></tr>
+<tr class="memitem:ab89464caa0aa1ba45e3d864318ffaf0e"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#ab89464caa0aa1ba45e3d864318ffaf0e">getPos</a> ()</td></tr>
+<tr class="memdesc:ab89464caa0aa1ba45e3d864318ffaf0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Pos object.  <a href="class_object3_d.html#ab89464caa0aa1ba45e3d864318ffaf0e">More...</a><br /></td></tr>
 <tr class="separator:ab89464caa0aa1ba45e3d864318ffaf0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1716c5ded18c38e887b70a2321469434"><td class="memItemLeft" align="right" valign="top"><a id="a1716c5ded18c38e887b70a2321469434"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setRot</b> (glm::vec3 rot)</td></tr>
+<tr class="memitem:a1716c5ded18c38e887b70a2321469434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">setRot</a> (glm::vec3 rot)</td></tr>
+<tr class="memdesc:a1716c5ded18c38e887b70a2321469434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Rot object.  <a href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">More...</a><br /></td></tr>
 <tr class="separator:a1716c5ded18c38e887b70a2321469434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9954e81b1ef37937e34bb7c64bb9f389"><td class="memItemLeft" align="right" valign="top"><a id="a9954e81b1ef37937e34bb7c64bb9f389"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getRot</b> ()</td></tr>
+<tr class="memitem:a9954e81b1ef37937e34bb7c64bb9f389"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">getRot</a> ()</td></tr>
+<tr class="memdesc:a9954e81b1ef37937e34bb7c64bb9f389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Rot object.  <a href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">More...</a><br /></td></tr>
 <tr class="separator:a9954e81b1ef37937e34bb7c64bb9f389"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade632e7ae42715904b92f9e20b90b104"><td class="memItemLeft" align="right" valign="top"><a id="ade632e7ae42715904b92f9e20b90b104"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setSize</b> (glm::vec3 size)</td></tr>
+<tr class="memitem:ade632e7ae42715904b92f9e20b90b104"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#ade632e7ae42715904b92f9e20b90b104">setSize</a> (glm::vec3 size)</td></tr>
+<tr class="memdesc:ade632e7ae42715904b92f9e20b90b104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Size object.  <a href="class_object3_d.html#ade632e7ae42715904b92f9e20b90b104">More...</a><br /></td></tr>
 <tr class="separator:ade632e7ae42715904b92f9e20b90b104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae80bdfca8f037370f1575d5f09d26ae9"><td class="memItemLeft" align="right" valign="top"><a id="ae80bdfca8f037370f1575d5f09d26ae9"></a>
-glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> ()</td></tr>
+<tr class="memitem:ae80bdfca8f037370f1575d5f09d26ae9"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object3_d.html#ae80bdfca8f037370f1575d5f09d26ae9">getSize</a> ()</td></tr>
+<tr class="memdesc:ae80bdfca8f037370f1575d5f09d26ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Size object.  <a href="class_object3_d.html#ae80bdfca8f037370f1575d5f09d26ae9">More...</a><br /></td></tr>
 <tr class="separator:ae80bdfca8f037370f1575d5f09d26ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_object3_d_8h_source.html#l00005">5</a> of file <a class="el" href="_object3_d_8h_source.html">Object3D.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Objeto abstracto básico renderizable. </p>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8h_source.html#l00019">19</a> of file <a class="el" href="_object3_d_8h_source.html">Object3D.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a03aa0541a95e6c09d5a0b69554fd7153"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03aa0541a95e6c09d5a0b69554fd7153">&#9670;&nbsp;</a></span>getGLSLShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_g_l_s_l_shader.html">GLSLShader</a> * Object3D::getGLSLShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the GLSL Shader object. </p>
+<dl class="section return"><dt>Returns</dt><dd>GLSLShader* shader del objeto 3D </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00039">39</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af1cecd4eaae8e0a0b8742f525be25711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1cecd4eaae8e0a0b8742f525be25711">&#9670;&nbsp;</a></span>getMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_mesh3_d.html">Mesh3D</a> * Object3D::getMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Mesh object. </p>
+<dl class="section return"><dt>Returns</dt><dd>Mesh3D* malla 3D del objeto 3D </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00029">29</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a54b1ffa3bba271bef270e1e15b29cf29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b1ffa3bba271bef270e1e15b29cf29">&#9670;&nbsp;</a></span>getModelMtx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4x4 Object3D::getModelMtx </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Model Mtx object. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::mat4x4 matriz modelo del objeto 3D </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00049">49</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ab89464caa0aa1ba45e3d864318ffaf0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89464caa0aa1ba45e3d864318ffaf0e">&#9670;&nbsp;</a></span>getPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Object3D::getPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Pos object. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::vec3 posición del objeto 3D </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00059">59</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9954e81b1ef37937e34bb7c64bb9f389"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9954e81b1ef37937e34bb7c64bb9f389">&#9670;&nbsp;</a></span>getRot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Object3D::getRot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Rot object. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::vec3 rotación del objeto 3D </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00069">69</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae80bdfca8f037370f1575d5f09d26ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae80bdfca8f037370f1575d5f09d26ae9">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::vec3 Object3D::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Size object. </p>
+<dl class="section return"><dt>Returns</dt><dd>glm::vec3 tamaño del objeto 3D </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00079">79</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa48845017f598d2d926b7f87bdc0b5ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48845017f598d2d926b7f87bdc0b5ea">&#9670;&nbsp;</a></span>setGLSLShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object3D::setGLSLShader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_g_l_s_l_shader.html">GLSLShader</a> *&#160;</td>
+          <td class="paramname"><em>shader</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the GLSL Shader object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shader</td><td>nuevo shader del objeto 3D </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00034">34</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4b7f38537bf7a73bb0feb6cc7300f031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7f38537bf7a73bb0feb6cc7300f031">&#9670;&nbsp;</a></span>setMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object3D::setMesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_mesh3_d.html">Mesh3D</a> *&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Mesh object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>nueva malla 3D del objeto 3D </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00024">24</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af0855a09269696bdf9e24bacc1c5f4d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0855a09269696bdf9e24bacc1c5f4d8">&#9670;&nbsp;</a></span>setPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object3D::setPos </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Pos object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>nueva posición del objeto 3D </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00054">54</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1716c5ded18c38e887b70a2321469434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1716c5ded18c38e887b70a2321469434">&#9670;&nbsp;</a></span>setRot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object3D::setRot </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>rot</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Rot object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rot</td><td>nueva rotación del objeto 3D </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00064">64</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ade632e7ae42715904b92f9e20b90b104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade632e7ae42715904b92f9e20b90b104">&#9670;&nbsp;</a></span>setSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Object3D::setSize </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Size object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>nuevo tamaño del objeto 3D </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_object3_d_8cpp_source.html#l00074">74</a> of file <a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>Source/<a class="el" href="_object3_d_8h_source.html">Object3D.h</a></li>
 <li>Source/<a class="el" href="_object3_d_8cpp_source.html">Object3D.cpp</a></li>
 </ul>

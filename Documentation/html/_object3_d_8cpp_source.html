@@ -72,84 +72,96 @@ $(function() {
 <div class="title">Object3D.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;Object3D.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;glm/gtc/matrix_transform.hpp&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;Object3D::Object3D()</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    pos = glm::vec4(0.0f);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    size = glm::vec4(1.0f);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    rot = glm::vec4(0.0f);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    modelMtx = glm::mat4x4(1.0f);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    mesh = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    shader = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> Object3D::setMesh(<a class="code" href="class_mesh3_d.html">Mesh3D</a> *nMesh)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    mesh = nMesh;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="class_mesh3_d.html">Mesh3D</a> *Object3D::getMesh()</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> mesh;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> Object3D::setGLSLShader(<a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a> *nShader)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    shader = nShader;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a> *Object3D::getGLSLShader()</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> shader;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> Object3D::computeModelMtx()</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    modelMtx = glm::rotate(glm::translate(glm::scale(glm::mat4x4(1.0f), getSize()), getPos()), (<span class="keywordtype">float</span>)M_PI, getRot());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;glm::mat4x4 Object3D::getModelMtx()</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> modelMtx;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> Object3D::setPos(glm::vec3 nPos)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    pos = glm::vec4(nPos.x, nPos.y, nPos.z, 1.0f);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;glm::vec3 Object3D::getPos()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> glm::vec3(pos.x, pos.y, pos.z);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> Object3D::setRot(glm::vec3 nRot)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    rot = glm::vec4(nRot.x, nRot.y, nRot.z, 1.0f);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;glm::vec3 Object3D::getRot()</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> glm::vec3(rot.x, rot.y, rot.z);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> Object3D::setSize(glm::vec3 nSize)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    size = glm::vec4(nSize.x, nSize.y, nSize.z, 1.0f);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;glm::vec3 Object3D::getSize()</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> glm::vec3(size.x, size.y, size.z);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<a href="_object3_d_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_object3_d_8h.html">Object3D.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;glm/gtc/matrix_transform.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_object3_d.html#ae3a1b17fb43ab59f5cf7b0ee21b9120b">   14</a></span>&#160;<a class="code" href="class_object3_d.html#ae3a1b17fb43ab59f5cf7b0ee21b9120b">Object3D::Object3D</a>()</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    pos = glm::vec4(0.0f);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    size = glm::vec4(1.0f);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    rot = glm::vec4(0.0f);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    modelMtx = glm::mat4x4(1.0f);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    mesh = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    shader = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">Object3D::setMesh</a>(<a class="code" href="class_mesh3_d.html">Mesh3D</a> *nMesh)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mesh = nMesh;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">   29</a></span>&#160;<a class="code" href="class_mesh3_d.html">Mesh3D</a> *<a class="code" href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">Object3D::getMesh</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> mesh;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_object3_d.html#aa48845017f598d2d926b7f87bdc0b5ea">   34</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object3_d.html#aa48845017f598d2d926b7f87bdc0b5ea">Object3D::setGLSLShader</a>(<a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a> *nShader)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    shader = nShader;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">   39</a></span>&#160;<a class="code" href="class_g_l_s_l_shader.html">GLSLShader</a> *<a class="code" href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">Object3D::getGLSLShader</a>()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> shader;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_object3_d.html#a4ddfd89da7a07375b44c637b5710048b">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object3_d.html#a4ddfd89da7a07375b44c637b5710048b">Object3D::computeModelMtx</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    modelMtx = <span class="comment">/*glm::rotate(*/</span> glm::translate(glm::scale(glm::mat4x4(1.0f), <a class="code" href="class_object3_d.html#ae80bdfca8f037370f1575d5f09d26ae9">getSize</a>()), <a class="code" href="class_object3_d.html#ab89464caa0aa1ba45e3d864318ffaf0e">getPos</a>()) <span class="comment">/*, (float)M_PI, getRot())*/</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">   49</a></span>&#160;glm::mat4x4 <a class="code" href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">Object3D::getModelMtx</a>()</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> modelMtx;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_object3_d.html#af0855a09269696bdf9e24bacc1c5f4d8">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object3_d.html#af0855a09269696bdf9e24bacc1c5f4d8">Object3D::setPos</a>(glm::vec3 nPos)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    pos = glm::vec4(nPos.x, nPos.y, nPos.z, 1.0f);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_object3_d.html#ab89464caa0aa1ba45e3d864318ffaf0e">   59</a></span>&#160;glm::vec3 <a class="code" href="class_object3_d.html#ab89464caa0aa1ba45e3d864318ffaf0e">Object3D::getPos</a>()</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> glm::vec3(pos.x, pos.y, pos.z);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">Object3D::setRot</a>(glm::vec3 nRot)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    rot = glm::vec4(nRot.x, nRot.y, nRot.z, 1.0f);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">   69</a></span>&#160;glm::vec3 <a class="code" href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">Object3D::getRot</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> glm::vec3(rot.x, rot.y, rot.z);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_object3_d.html#ade632e7ae42715904b92f9e20b90b104">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object3_d.html#ade632e7ae42715904b92f9e20b90b104">Object3D::setSize</a>(glm::vec3 nSize)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    size = glm::vec4(nSize.x, nSize.y, nSize.z, 1.0f);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_object3_d.html#ae80bdfca8f037370f1575d5f09d26ae9">   79</a></span>&#160;glm::vec3 <a class="code" href="class_object3_d.html#ae80bdfca8f037370f1575d5f09d26ae9">Object3D::getSize</a>()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> glm::vec3(size.x, size.y, size.z);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_mesh3_d_html"><div class="ttname"><a href="class_mesh3_d.html">Mesh3D</a></div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8h_source.html#l00006">Mesh3D.h:7</a></div></div>
-<div class="ttc" id="aclass_g_l_s_l_shader_html"><div class="ttname"><a href="class_g_l_s_l_shader.html">GLSLShader</a></div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8h_source.html#l00006">GLSLShader.h:7</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a03aa0541a95e6c09d5a0b69554fd7153"><div class="ttname"><a href="class_object3_d.html#a03aa0541a95e6c09d5a0b69554fd7153">Object3D::getGLSLShader</a></div><div class="ttdeci">GLSLShader * getGLSLShader()</div><div class="ttdoc">Get the GLSL Shader object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00039">Object3D.cpp:39</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_ade632e7ae42715904b92f9e20b90b104"><div class="ttname"><a href="class_object3_d.html#ade632e7ae42715904b92f9e20b90b104">Object3D::setSize</a></div><div class="ttdeci">void setSize(glm::vec3 size)</div><div class="ttdoc">Set the Size object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00074">Object3D.cpp:74</a></div></div>
+<div class="ttc" id="a_object3_d_8h_html"><div class="ttname"><a href="_object3_d_8h.html">Object3D.h</a></div></div>
+<div class="ttc" id="aclass_mesh3_d_html"><div class="ttname"><a href="class_mesh3_d.html">Mesh3D</a></div><div class="ttdoc">Malla 3D donde almacena vértices, triángulos y color.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh3_d_8h_source.html#l00019">Mesh3D.h:20</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_aa48845017f598d2d926b7f87bdc0b5ea"><div class="ttname"><a href="class_object3_d.html#aa48845017f598d2d926b7f87bdc0b5ea">Object3D::setGLSLShader</a></div><div class="ttdeci">void setGLSLShader(GLSLShader *shader)</div><div class="ttdoc">Set the GLSL Shader object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00034">Object3D.cpp:34</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a1716c5ded18c38e887b70a2321469434"><div class="ttname"><a href="class_object3_d.html#a1716c5ded18c38e887b70a2321469434">Object3D::setRot</a></div><div class="ttdeci">void setRot(glm::vec3 rot)</div><div class="ttdoc">Set the Rot object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00064">Object3D.cpp:64</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_af0855a09269696bdf9e24bacc1c5f4d8"><div class="ttname"><a href="class_object3_d.html#af0855a09269696bdf9e24bacc1c5f4d8">Object3D::setPos</a></div><div class="ttdeci">void setPos(glm::vec3 pos)</div><div class="ttdoc">Set the Pos object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00054">Object3D.cpp:54</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_ab89464caa0aa1ba45e3d864318ffaf0e"><div class="ttname"><a href="class_object3_d.html#ab89464caa0aa1ba45e3d864318ffaf0e">Object3D::getPos</a></div><div class="ttdeci">glm::vec3 getPos()</div><div class="ttdoc">Get the Pos object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00059">Object3D.cpp:59</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a4ddfd89da7a07375b44c637b5710048b"><div class="ttname"><a href="class_object3_d.html#a4ddfd89da7a07375b44c637b5710048b">Object3D::computeModelMtx</a></div><div class="ttdeci">void computeModelMtx()</div><div class="ttdoc">Actualiza la matriz modelo del objeto 3D.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00044">Object3D.cpp:44</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_ae3a1b17fb43ab59f5cf7b0ee21b9120b"><div class="ttname"><a href="class_object3_d.html#ae3a1b17fb43ab59f5cf7b0ee21b9120b">Object3D::Object3D</a></div><div class="ttdeci">Object3D()</div><div class="ttdoc">Construct a new Object 3D object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00014">Object3D.cpp:14</a></div></div>
+<div class="ttc" id="aclass_g_l_s_l_shader_html"><div class="ttname"><a href="class_g_l_s_l_shader.html">GLSLShader</a></div><div class="ttdoc">Shader de GLSL. Permite modificar las variables uniformes del shader.</div><div class="ttdef"><b>Definition:</b> <a href="_g_l_s_l_shader_8h_source.html#l00022">GLSLShader.h:23</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a4b7f38537bf7a73bb0feb6cc7300f031"><div class="ttname"><a href="class_object3_d.html#a4b7f38537bf7a73bb0feb6cc7300f031">Object3D::setMesh</a></div><div class="ttdeci">void setMesh(Mesh3D *mesh)</div><div class="ttdoc">Set the Mesh object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00024">Object3D.cpp:24</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a54b1ffa3bba271bef270e1e15b29cf29"><div class="ttname"><a href="class_object3_d.html#a54b1ffa3bba271bef270e1e15b29cf29">Object3D::getModelMtx</a></div><div class="ttdeci">glm::mat4x4 getModelMtx()</div><div class="ttdoc">Get the Model Mtx object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00049">Object3D.cpp:49</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_a9954e81b1ef37937e34bb7c64bb9f389"><div class="ttname"><a href="class_object3_d.html#a9954e81b1ef37937e34bb7c64bb9f389">Object3D::getRot</a></div><div class="ttdeci">glm::vec3 getRot()</div><div class="ttdoc">Get the Rot object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00069">Object3D.cpp:69</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_ae80bdfca8f037370f1575d5f09d26ae9"><div class="ttname"><a href="class_object3_d.html#ae80bdfca8f037370f1575d5f09d26ae9">Object3D::getSize</a></div><div class="ttdeci">glm::vec3 getSize()</div><div class="ttdoc">Get the Size object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00079">Object3D.cpp:79</a></div></div>
+<div class="ttc" id="aclass_object3_d_html_af1cecd4eaae8e0a0b8742f525be25711"><div class="ttname"><a href="class_object3_d.html#af1cecd4eaae8e0a0b8742f525be25711">Object3D::getMesh</a></div><div class="ttdeci">Mesh3D * getMesh()</div><div class="ttdoc">Get the Mesh object.</div><div class="ttdef"><b>Definition:</b> <a href="_object3_d_8cpp_source.html#l00029">Object3D.cpp:29</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
